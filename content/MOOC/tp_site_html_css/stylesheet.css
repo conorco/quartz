@@ -1,0 +1,297 @@
+/* Définition des polices personnalisées */
+
+@font-face {
+    font-family: 'dayrom';
+    src: url('polices/dayrom.eot') format('eot'),
+         url('polices/dayrom.woff') format('woff'),
+         url('polices/dayrom.ttf') format('truetype'),
+         url('polices/dayrom.svg') format('svg');
+}
+
+@font-face {
+    font-family: 'ballpark';
+    src: url('polices/ballpark.eot') format('eot'),
+         url('polices/ballpark.woff') format('woff'),
+         url('polices/ballpark.ttf') format('truetype'),
+         url('polices/ballpark.svg') format('svg');
+}
+
+/* Mise en page du texte */
+
+body
+{
+    background: url('images/fond_jaune.png');
+    font-family: 'Trebuchet MS', Arial, sans-serif;
+    color: #181818;
+}
+
+#main_wrapper {
+  width: 800px;
+  margin: auto;
+}
+
+@media all and (max-width: 1024px)
+{
+   #main_wrapper
+   {
+     width: auto;
+   }
+   nav
+    {
+        width: auto;
+        text-align: left;
+    }
+
+    nav ul
+    {
+        flex-direction: column;
+    }
+
+    nav li
+    {
+        padding-left: 4px;
+    }
+
+    nav a
+    {
+        font-size: 1.1em;
+    }
+
+    nav a:hover
+    {
+        border-bottom: 0;
+    }
+    .presentation
+    {
+      display: none;
+    }
+    section
+    {
+      flex-direction: column;
+    }
+    article, aside
+    {
+        width: auto;
+        margin-bottom: 15px;
+    }
+
+    #bulle
+    {
+        display: none;
+    }
+
+    #zozor img
+    {
+        width: 110px;
+        float: right;
+        margin-left: 15px;
+    }
+
+    aside p:last-child
+    {
+        text-align: center;
+    }
+}
+h1
+{
+  font-family: ballpark, Arial;
+  font-weight: normal;
+  font-size: 2.5em;
+  margin: 0 0 0 10px;
+}
+
+h2
+{
+    font-family: dayrom, serif;
+    font-size: 1.1em;
+    margin-top: 0px;
+    font-weight: normal;
+}
+
+h3, nav a
+{
+  font-family: dayrom;
+  text-transform: uppercase;
+  font-weight: normal;
+}
+
+a
+{
+  color: rgb(134,13,13);
+  text-decoration: none;
+}
+
+p
+{
+  text-align: justify;
+}
+
+/* Organisation du site */
+/* header */
+
+header
+{
+  background: url('images/separateur.png') repeat-x bottom;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+}
+
+#main_title
+{
+  display: flex;
+  flex-direction: column;
+}
+
+#logo
+{
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+}
+
+#logo img
+{
+  width:50px;
+  height: 50px;
+}
+
+nav ul
+{
+  list-style-type: none;
+  display: flex;
+}
+
+nav li
+{
+  margin-right: 15px;
+}
+
+nav a
+{
+    font-size: 1.3em;
+    color: #181818;
+    padding-bottom: 3px;
+    text-decoration: none;
+}
+
+nav a:hover
+{
+    color: #760001;
+    border-bottom: 3px solid #760001;
+}
+
+
+/* Bannière */
+
+.presentation
+ {
+  background: url('images/sanfrancisco.jpg') no-repeat;
+  width: 800px;
+  height:200px;
+  margin-top: 15px;
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 0px 4px 4px #1c1a19;
+}
+
+.subtitle
+{
+    position: absolute;
+    bottom: 0;
+    border-radius: 0px 0px 5px 5px;
+    width: 792px;
+    height: 33px;
+    padding-top: 15px;
+    padding-left: 8px;
+    background-color: rgba(24,24,24,0.8);
+    color: white;
+    font-size: 0.8em;
+}
+
+.bouton
+{
+  /* display: block; */
+  color: white;
+  position: absolute;
+  right: 9px;
+  background: url('images/fond_degraderouge.png') repeat-x;
+  /* padding-left: 10px;
+  padding-right: 10px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+ équivalent à :
+  */
+  padding : 5px 10px 8px 10px;
+  /* haut droite bas gauche */
+  border-radius: 3px;
+  text-decoration: none;
+}
+
+section
+{
+  display: flex;
+  margin-bottom: 20px;
+}
+
+
+
+article
+{
+  flex: 3;
+  margin-right: 20px;
+}
+
+article img
+{
+  vertical-align: middle;
+  margin-right: 20px;
+}
+
+article a
+{
+  border-bottom: 1px solid #760001;
+}
+
+aside
+{
+  background-color: grey;
+  color: white;
+  margin-top: 20px;
+  border-radius: 10px;
+  padding: 0px 10px 0px 10px;
+}
+
+#zozor
+{
+  text-align: center;
+}
+
+#bulle
+{
+  position: relative;
+  right:21px;
+  top: 100px;
+}
+
+.links
+{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+/* Footer */
+
+footer
+{
+  background: url('images/separateur.png') repeat-x top, url('images/ico_top.png') no-repeat top center;
+  display: flex;
+  padding-top: 20px;
+}
+
+.friends
+{
+  display: flex;
+  justify-content: space-between;
+}

@@ -1,0 +1,10 @@
+{
+  "files": [],
+  "templaterFiles": [
+    "subscript.md",
+    "superscript.md"
+  ],
+  "newFileTemplates": [],
+  "openNewFileTemplateInNewPane": true,
+  "useNewFileTemplateOnFileCreation": false
+}

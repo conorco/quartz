@@ -1,0 +1,7 @@
+{
+  "deleteOption": "system-trash",
+  "logsModal": true,
+  "excludedFolders": "Chimie, Divers, Fac, Important, MOOC, Service civique, Acadomia",
+  "ribbonIcon": false,
+  "excludeSubfolders": true
+}

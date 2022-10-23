@@ -1,0 +1,157 @@
+{
+  "main": {
+    "id": "fa606bc7ae3c05e6",
+    "type": "split",
+    "children": [
+      {
+        "id": "562fedcd75d0b659",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "Notes_home.md",
+            "mode": "preview",
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "d247d2007a8a5fb6",
+    "type": "split",
+    "children": [
+      {
+        "id": "c1e2ccd0b0791e9b",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1b8b3a45f359ac28",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4002ed9184dbbcff",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "byModifiedTime"
+              }
+            }
+          },
+          {
+            "id": "a1d11063c9b1a1f1",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "253dbe714d72709d",
+    "type": "split",
+    "children": [
+      {
+        "id": "4eca5f810382c1b1",
+        "type": "tabs",
+        "dimension": 47.8134110787172,
+        "children": [
+          {
+            "id": "836491116ee97176",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": false
+              }
+            }
+          },
+          {
+            "id": "274cfd65732a004f",
+            "type": "leaf",
+            "state": {
+              "type": "todo",
+              "state": {}
+            }
+          }
+        ]
+      },
+      {
+        "id": "b89799b63ce9918d",
+        "type": "tabs",
+        "dimension": 52.1865889212828,
+        "children": [
+          {
+            "id": "2a6886289b819a4e",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "Notes_home.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": true,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "a05e283f934a243e",
+            "type": "leaf",
+            "state": {
+              "type": "advanced-tables-toolbar",
+              "state": {}
+            }
+          },
+          {
+            "id": "c1ecd58531982fc4",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "Notes_home.md"
+              }
+            }
+          }
+        ],
+        "currentTab": 2
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "562fedcd75d0b659",
+  "lastOpenFiles": [
+    "Projets/Grav.md",
+    "Notes_home.md",
+    "Projets/Grav_typo.md",
+    "Fac/DIE/CM - Découverte de la programmation.md",
+    "Fac/COD/Chapitre 1 Représentation des nombres – Numération.md",
+    "Fac/DIE/Fiche DIE Info.md",
+    "Fac/DIE/Informatique - Infos.md",
+    "Fac/DIE/documentation-projet.pdf",
+    "Obsidian/diagram-plantuml.md",
+    "Fac/INF1/CM.md"
+  ]
+}

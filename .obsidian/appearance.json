@@ -1,0 +1,14 @@
+{
+  "baseFontSize": 15,
+  "translucency": false,
+  "enabledCssSnippets": [
+    "images",
+    "tags",
+    "code",
+    "slides_fix"
+  ],
+  "cssTheme": "",
+  "theme": "obsidian",
+  "accentColor": "#2771d3",
+  "nativeMenus": false
+}

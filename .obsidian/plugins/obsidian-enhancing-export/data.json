@@ -1,0 +1,55 @@
+{
+  "items": [
+    {
+      "name": "Markdown"
+    },
+    {
+      "name": "Markdown (Hugo)"
+    },
+    {
+      "name": "Html"
+    },
+    {
+      "name": "TextBundle"
+    },
+    {
+      "name": "PDF",
+      "customArguments": "--defaults=C:\\Users\\conor\\pandoc-defaults.yaml --template eisvogel --listings"
+    },
+    {
+      "name": "Word (.docx)"
+    },
+    {
+      "name": "OpenOffice"
+    },
+    {
+      "name": "RTF"
+    },
+    {
+      "name": "Epub"
+    },
+    {
+      "name": "Latex"
+    },
+    {
+      "name": "Media Wiki"
+    },
+    {
+      "name": "reStructuredText"
+    },
+    {
+      "name": "Textile"
+    },
+    {
+      "name": "OPML"
+    }
+  ],
+  "defaultExportDirectoryMode": "Same",
+  "openExportedFile": true,
+  "lastExportDirectory": {
+    "win32": "C:\\Users\\conor\\Nextcloud\\Fac\\MAT1"
+  },
+  "lastEditName": "PDF",
+  "version": "1.1.5",
+  "lastExportType": "Html"
+}

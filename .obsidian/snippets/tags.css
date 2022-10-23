@@ -1,0 +1,69 @@
+/* .tag {
+  background-color: var(--text-accent);
+  border: none;
+  color: white;
+  font-size: 11px;
+  padding: 1px 8px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 0px 0px;
+  cursor: pointer;
+  border-radius: 14px;
+}
+.tag:hover {
+color: white;
+background-color: var(--text-accent-hover);
+} */
+
+/* change la couleur des tags */
+/* .tag[href^="#TAG"] {
+  color: #973ca6;
+} */
+
+
+.tag[href^="#scu"] {
+  color: #04666e;
+}
+.tag[href^="#work"] {
+  color: #bb6134;
+}
+.tag[href^="#todo"] {
+  color: #bd1414;
+}
+
+.tag[href^="#code"] {
+  color: #820dde;
+}
+
+.tag[href^="#cours"] {
+  color: #0dbfde;
+}
+
+.tag[href^="#DIE"] {
+  color: #0ddecb;
+}
+
+.tag[href^="#INF1"] {
+  color: #440dde;
+}
+
+.tag[href^="#FOM"] {
+  color: #af5cf1;
+}
+
+.tag[href^="#MAT1"] {
+  color: #105e0e;
+}
+
+.tag[href^="#PRR"] {
+  color: #de840d;
+}
+
+.tag[href^="#SI1"] {
+  color: #dedc0d;
+}
+
+.tag[href^="#COD"] {
+  color: #de0d78;
+}

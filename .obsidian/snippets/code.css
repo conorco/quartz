@@ -1,0 +1,11 @@
+/* To enable wrapping of code blocks even in preview mode */
+.theme-dark code[class*="language-"], .theme-dark pre[class*="language-"], .theme-light code[class*="language-"], .theme-light pre[class*="language-"] {
+  word-wrap: break-word !important;
+  white-space: pre-wrap !important;
+}
+
+/* to hide the "copy" button */
+
+.markdown-rendered button.copy-code-button {
+    display: none;
+}

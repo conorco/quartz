@@ -4,9 +4,9 @@ tags: Maths
 ---
 
 ## Formes des nombres complexes
-**Forme algébrique :** $z = a+bi$
-**Forme trigonométrique :** $z= |z| \times (\cos{\theta}+i\sin{\theta})$ 
-**Forme exponentielle :** $z = |z|\times e^{i\theta}$
+- **Forme algébrique :** $z = a+bi$
+- **Forme trigonométrique :** $z= |z| \times (\cos{\theta}+i\sin{\theta})$ 
+- **Forme exponentielle :** $z = |z|\times e^{i\theta}$
 
 Pour passer de la forme algébrique à une autre, il faut calculer le module et l'argument.
 
@@ -17,7 +17,7 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - $z\cdot \overline{z} = |z|^2$
 - $|z\cdot \overline{z}| = |z|\cdot|\overline{z}|$ et donc $\left|\frac{z}{\overline{z}} \right|= \frac{|z|}{|\overline{z}|}$  
 - $\forall n \in \mathbb{N}, |z^n|=|z|^{n}$  
-- **Inégalité triangulaire : ** $|z+z'| \leq |z|+|z'|$    
+- **Inégalité triangulaire :** $|z+z'| \leq |z|+|z'|$    
 ## Propriétés de l'argument
 **Définition de l'argument :** $\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{Re(z)}{|z|} \\\sin{\theta}=\frac{Im(z)}{|z|}\end{array}\right.$
 - $arg(\overline{z}) =-arg(z) (mod~2\pi)$
@@ -27,7 +27,7 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - $\forall n \in \mathbb{N}, arg(z^{n})=n\cdot arg(z)(mod~2\pi)$
 
 ## Trigonométrie
-![300](Pasted%20image%2020221021160950.png)
+![Cercle trigonométrique |300](/content/images/Pasted%20image%2020221021160950.png)
 
 ### Formules de trigonométrie
 **Additions et soustractions :** 
@@ -52,12 +52,9 @@ D'où les formules suivantes :
 
 **Formule d'Euler, application aux nombres complexes**
 $$
-\begin{aligned}
-
-\cos\theta =\frac{e^{i\theta}+e^{-i\theta}}{2} \iff 2\cos\theta=e^{i\theta}+e^{-i\theta} \\
+\cos\theta =\frac{e^{i\theta}+e^{-i\theta}}{2} \iff 2\cos\theta=e^{i\theta}+e^{-i\theta}$$
+$$
 \sin\theta=\frac{e^{i\theta}-e^{-i\theta}}{2i} \iff 2i\sin\theta=e^{i\theta}-e^{-i\theta}
-\end{aligned}
-
 $$
 
 ## Méthodes
@@ -78,17 +75,15 @@ $$
    *Par exemple :* $cos^{3}x=\frac{1}{8}(2\cos(3x)+3\cdot2\cos(x))$ 
 5. Simplification par 2
 
-```ad-danger
-title: Attention pour la linéarisation de sinus
-Ne pas oublier les **i**, aussi bien dans les $\frac{1}{(2i)^n}$ que dans les formules d'Euler : $2i\sin\theta=e^{i\theta}-e^{-i\theta}$
-```
+> [!danger] Attention pour la linéarisation des sinus
+> Ne pas oublier les **i**, aussi bien dans les $\frac{1}{(2i)^n}$ que dans les formules d'Euler : $2i\sin\theta=e^{i\theta}-e^{-i\theta}$
 
 On peut aussi utiliser les formules de trigonométrie usuelles pour linéariser.
 
-```ad-info
-- Si la fonction à linéariser est paire, on obtiendra au final que des cosinus (car cos est paire)  
-- Si la fonction à linéariser est impaire, on aura au final que des sinus (car sin est impaire)
-```
+> [!info]
+> - Si la fonction à linéariser est paire, on obtiendra au final que des cosinus (car cos est paire)  
+> - Si la fonction à linéariser est impaire, on aura au final que des sinus (car sin est impaire)
+
 
 
 ### Racines d'un nombre complexe

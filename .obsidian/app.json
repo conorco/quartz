@@ -1,3 +1,9 @@
 {
-  "useMarkdownLinks": true
+  "useMarkdownLinks": true,
+  "attachmentFolderPath": "content/attachments",
+  "newLinkFormat": "absolute",
+  "alwaysUpdateLinks": true,
+  "newFileLocation": "folder",
+  "newFileFolderPath": "content/notes",
+  "promptDelete": false
 }

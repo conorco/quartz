@@ -96,3 +96,5 @@ L'équation $z^{n}=a$ possède $n$ solutions que l'on appelle les racines $n$-i�
 Par exemple, pour $z^{2}=|z|\cdot e^{i\theta}$, ses racines sont $z_{1}=|z|^{1/2}e^{\frac{i\theta}{2}}$ et $z_{2}=|z|^{1/2}e^{i(\frac{\theta}{2}+\pi)}$  
 
 Pour trouver les racines $n$-ièmes, il faut trouver la racine évidente ($z_{1}=|z|^{1/n}e^{\frac{i\theta}{n}}$) et les racines $n$-ièmes de l'unité, c'est-à-dire, les solutions de : $w^{n}=1$ 
+
+[Retourner à l'accueil](_index.md)

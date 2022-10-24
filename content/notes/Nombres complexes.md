@@ -27,6 +27,8 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - $\forall n \in \mathbb{N}, arg(z^{n})=n\cdot arg(z)(mod~2\pi)$
 
 ## Trigonométrie
+![](/content/images/Pasted%20image%2020221021160950.png)
+
 ![Cercle trigonométrique |300](/content/images/Pasted%20image%2020221021160950.png)
 
 ### Formules de trigonométrie
@@ -76,11 +78,13 @@ $$
 5. Simplification par 2
 
 > [!danger] Attention pour la linéarisation des sinus
+> 
 > Ne pas oublier les **i**, aussi bien dans les $\frac{1}{(2i)^n}$ que dans les formules d'Euler : $2i\sin\theta=e^{i\theta}-e^{-i\theta}$
 
 On peut aussi utiliser les formules de trigonométrie usuelles pour linéariser.
 
 > [!info]
+> 
 > - Si la fonction à linéariser est paire, on obtiendra au final que des cosinus (car cos est paire)  
 > - Si la fonction à linéariser est impaire, on aura au final que des sinus (car sin est impaire)
 

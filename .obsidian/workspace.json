@@ -13,7 +13,7 @@
             "state": {
               "type": "markdown",
               "state": {
-                "file": "content/notes/Nombres complexes.md",
+                "file": "content/_index.md",
                 "mode": "source",
                 "source": false
               }
@@ -85,7 +85,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/notes/Nombres complexes.md",
+                "file": "content/_index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -102,7 +102,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/notes/Nombres complexes.md",
+                "file": "content/_index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -125,7 +125,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "content/notes/Nombres complexes.md"
+                "file": "content/_index.md"
               }
             }
           }
@@ -141,8 +141,8 @@
   },
   "active": "c1f4a78cb62a669f",
   "lastOpenFiles": [
-    "content/templates/post.md",
     "content/notes/Nombres complexes.md",
+    "content/templates/post.md",
     "CODE_OF_CONDUCT.md",
     "README.md",
     "content/_index.md"

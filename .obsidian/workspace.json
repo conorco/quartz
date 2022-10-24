@@ -1,0 +1,150 @@
+{
+  "main": {
+    "id": "5cc5cc0d3e70035b",
+    "type": "split",
+    "children": [
+      {
+        "id": "0cc7931f17a9b494",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c1f4a78cb62a669f",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/notes/Nombres complexes.md",
+                "mode": "source",
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "768e0a3a5347ba88",
+    "type": "split",
+    "children": [
+      {
+        "id": "ea2309d52ae9cba0",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "c58a9ca05e0c7863",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "46ec2796901edad7",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "ccce9cedd629d1bf",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "7cad82faa1b8eaaa",
+    "type": "split",
+    "children": [
+      {
+        "id": "3c8f19c5b544ed48",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "1dc29323f384c99c",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/notes/Nombres complexes.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "ea4fadc04d4a51e5",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/notes/Nombres complexes.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "308edd56af136c6f",
+            "type": "leaf",
+            "state": {
+              "type": "tag",
+              "state": {
+                "sortOrder": "frequency",
+                "useHierarchy": true
+              }
+            }
+          },
+          {
+            "id": "3c86220722a6138d",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/notes/Nombres complexes.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "ribbon": {
+    "mostRecentAction": ""
+  },
+  "active": "c1f4a78cb62a669f",
+  "lastOpenFiles": [
+    "content/templates/post.md",
+    "content/notes/Nombres complexes.md",
+    "CODE_OF_CONDUCT.md",
+    "README.md",
+    "content/_index.md"
+  ]
+}

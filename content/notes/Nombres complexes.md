@@ -10,7 +10,7 @@ tags: Maths
 
 Pour passer de la forme algébrique à une autre, il faut calculer le module et l'argument.
 
-## Propiétés du module
+## Propriétés du module
 **Définition du module :** $|z| =\sqrt{a^2+b^2}$ 
 - $|z| = 0 \iff z=0$
 - $|z|=|\overline{z}|= |-\overline{z}|=|-z|$ 
@@ -28,9 +28,9 @@ $$\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{R
 - $\forall n \in \mathbb{N}, arg(z^{n})=n\cdot arg(z)(mod~2\pi)$
 
 ## Trigonométrie
-![Cercle trigonométrique](content/images/cercle_trigo.png)
+![Cercle trigonométrique](images/cercle_trigo.png)
 
-![Cercle trigonométrique |300](content/images/cercle_trigo.png)
+![Cercle trigonométrique |300](images/cercle_trigo.png)
 
 ### Formules de trigonométrie
 **Additions et soustractions :** 

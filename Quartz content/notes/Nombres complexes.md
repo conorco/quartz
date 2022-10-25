@@ -20,7 +20,9 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - **Inégalité triangulaire :** $|z+z'| \leq |z|+|z'|$    
 ## Propriétés de l'argument
 **Définition de l'argument :** 
-$$\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{Re(z)}{|z|} \\\sin{\theta}=\frac{Im(z)}{|z|}\end{array}\right.$$
+$$
+\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{Re(z)}{|z|} \\\sin{\theta}=\frac{Im(z)}{|z|}\end{array}\right.
+$$
 - $arg(\overline{z}) =-arg(z) (mod~2\pi)$
 - $arg(-\overline{z}) =\pi-arg(z) (mod~2\pi)$ 
 - $arg(z) =\pi+arg(z) (mod~2\pi)$
@@ -30,7 +32,6 @@ $$\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{R
 ## Trigonométrie
 ![Cercle trigonométrique](images/cercle_trigo.png)
 
-![Cercle trigonométrique |300](images/cercle_trigo.png)
 
 ### Formules de trigonométrie
 **Additions et soustractions :** 

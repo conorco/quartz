@@ -1,12 +1,12 @@
 // Add your own CSS here!
 
 :root {
-  --light: #77d8fc;
-  --dark: #110416;
-  --secondary: #97AFB9;
-  --tertiary: #8CD4C8;
-  --visited: #D3FBD8;
-  --primary: #77d8fc;
+  --light: #fcc4f8; // background of light theme
+  --dark: #182651; // main color of light theme
+  --secondary: #735691; //links
+  --tertiary: #EC7968; //hover
+  --visited: #463E72;
+  --primary: #6B396E;
   --gray: #4e4e4e;
   --lightgray: #f0f0f0;
   --outlinegray: #dadada;
@@ -14,12 +14,12 @@
 }
 
 [saved-theme="dark"] {
-  --light: #110416 !important;
-  --dark: #77d8fc !important;
-  --secondary: #97AFB9 !important;
-  --tertiary: #8CD4C8 !important;
-  --visited: #D3FBD8 !important;
-  --primary: #77d8fc !important;
+  --light: #182651 !important; // background of dark theme
+  --dark: #fcc4f8 !important; // main color of dark theme
+  --secondary: #00C2BE !important; // links
+  --tertiary: #EC7968 !important; //hover
+  --visited: #008B89 !important;
+  --primary: #14FCF6 !important;
   --gray: #d4d4d4 !important;
   --lightgray: #292633 !important;
   --outlinegray: #343434 !important;

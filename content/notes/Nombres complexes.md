@@ -19,7 +19,8 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - $\forall n \in \mathbb{N}, |z^n|=|z|^{n}$  
 - **Inégalité triangulaire :** $|z+z'| \leq |z|+|z'|$    
 ## Propriétés de l'argument
-**Définition de l'argument :** $\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{Re(z)}{|z|} \\\sin{\theta}=\frac{Im(z)}{|z|}\end{array}\right.$
+**Définition de l'argument :** 
+$$\theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{Re(z)}{|z|} \\\sin{\theta}=\frac{Im(z)}{|z|}\end{array}\right.$$
 - $arg(\overline{z}) =-arg(z) (mod~2\pi)$
 - $arg(-\overline{z}) =\pi-arg(z) (mod~2\pi)$ 
 - $arg(z) =\pi+arg(z) (mod~2\pi)$
@@ -27,9 +28,9 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - $\forall n \in \mathbb{N}, arg(z^{n})=n\cdot arg(z)(mod~2\pi)$
 
 ## Trigonométrie
-![](/content/images/Pasted%20image%2020221021160950.png)
+![Cercle trigonométrique](content/images/cercle_trigo.png)
 
-![Cercle trigonométrique |300](/content/images/Pasted%20image%2020221021160950.png)
+![Cercle trigonométrique |300](content/images/cercle_trigo.png)
 
 ### Formules de trigonométrie
 **Additions et soustractions :** 

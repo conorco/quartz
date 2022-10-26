@@ -13,7 +13,7 @@ $$N_{b} = \alpha_{p}\alpha_{p-1}...\alpha_{1}\alpha_{0}$$  avec les symboles $\a
 
 > [!danger] Attention !
 > 
-> $N_{b} = \alpha_{p}\alpha_{p-1}...\alpha_{1}\alpha_{0}$ ne signifie pas que N peut s'écrire sous la forme d'une multiplication, c'est bien la suite de symboles qu'on représete.
+> $N_{b} = \alpha_{p}\alpha_{p-1}...\alpha_{1}\alpha_{0}$ ne signifie pas que N peut s'écrire sous la forme d'une multiplication, c'est bien la suite de symboles qu'on représente.
 > Par exemple N = 12 avec $\alpha_{0} = 1$ et $\alpha_{1} = 2$
 
 Donc $\alpha_{i}$ dépend de la base utilisée, par exemple en base 10 : $0 < \alpha_{i}<9$
@@ -38,6 +38,7 @@ Les poids sont des puissances de 10 positives : $10^{i}$
 > [!example] Décomposer 1987 en base 10
 > 
 > $1987 = 7\times 10^{0} + 9\times 10^{1} + 9\times 10^{2} + 1\times 10^{3}$
+> 
 > 7 est dit le **poids faible** (nombre tout à droite)
 
 

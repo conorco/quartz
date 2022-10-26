@@ -38,9 +38,11 @@ Les poids sont des puissances de 10 positives : $10^{i}$
 > $1987 = 7\times 10^{0} + 9\times 10^{1} + 9\times 10^{2} + 1\times 10^{3}$
 > 7 est dit le **poids faible** (nombre tout à droite)
 
-```ad-danger
-Attention : décalage d'indice entre la position et le poids (dans l'exemple précédent, 9 est à la troisième position mais avec un poids de 2)
-```
+
+> [!danger] Attention dans la décomposition
+> 
+> décalage d'indice entre la position et le poids (dans l'exemple précédent, 9 est à la troisième position mais avec un poids de 2)
+
 
 #### Partie fractionnaire (après la virgule)
 Donc $i<0$ et $n_{10} = \sum_{p}^{i-1}\alpha_{i}10^{i}$ 
@@ -183,6 +185,7 @@ $$2^{k-1}<N_{(10)}<2^{k}$$
 
 
 > [!example] Convertir 95<sub>(10)</sub> en base 2
+> 
 > $$
 > \begin{aligned}
 > \begin{array}{rl}
@@ -314,7 +317,7 @@ La méthode de division successive ne fonctionne pas donc on utilise la méthode
 > 0,5 \times 2 = 1,0
 > \end{aligned}
 > $$
-> On s'arrête lorsque l'on atteint x**,0**
+> On s'arrête lorsque l'on atteint x **,0**
 > 
 > On lit les chiffres entiers pour la partie décimale : donc $0,375_{(10)}=0,011_{(2)}$
 > 
@@ -335,6 +338,7 @@ Donc la conversion est assez rapide car on peut faire des paquets de bits
 
 
 > [!info] **Hexadécimal vers binaire**
+> 
 > Chaque symbole est remplacé par 4 bits
 
 > [!info] **Binaire vers hexadécimal**
@@ -391,6 +395,38 @@ Comme en décimal (indiquer les retenues)
 > \end{aligned}
 > $$
 
+
+# test ici
+> [!example] 111<sub>(2)</sub> + 011<sub>(2)</sub>
+> 
+> $$
+> \begin{aligned}
+> \begin{array}{rl}
+> & 1& 1 & 1 & \\
+> && 1 & 1 & 1 \\
+> + && 0 & 1 & 1 \\
+> && - & - & - \\
+> &1& 0 & 1 &  0
+> \end{array}
+> \end{aligned}
+> $$
+
+> [!example] 111<sub>(2)</sub> + 011<sub>(2)</sub>
+> 
+> $$
+> \begin{aligned}
+> \begin{array}{rl}
+> & \tiny1& \tiny1 & \tiny1 & \\
+> && 1 & 1 & 1 \\
+> + && 0 & 1 & 1 \\
+> && - & - & - \\
+> &1& 0 & 1 &  0
+> \end{array}
+> \end{aligned}
+> $$
+
+
+# fin test
 
 > [!tip] Astuce pour la base 16
 > 

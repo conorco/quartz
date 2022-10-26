@@ -388,45 +388,13 @@ Comme en décimal (indiquer les retenues)
 > \begin{array}{rl}
 > &①& ① & ① & \\
 > && 1 & 1 & 1 \\
-> + && 0 & 1 & 1 \\
+> \text{+} && 0 & 1 & 1 \\
 > && - & - & - \\
 > &1& 0 & 1 &  0
 > \end{array}
 > \end{aligned}
 > $$
 
-
-# test ici
-> [!example] 111<sub>(2)</sub> + 011<sub>(2)</sub>
-> 
-> $$
-> \begin{aligned}
-> \begin{array}{rl}
-> ‧& 1& 1 & 1 & \\
-> ‧&‧& 1 & 1 & 1 \\
-> + &‧& 0 & 1 & 1 \\
-> ‧&‧& - & - & - \\
-> ‧&1& 0 & 1 &  0
-> \end{array}
-> \end{aligned}
-> $$
-
-> [!example] 111<sub>(2)</sub> + 011<sub>(2)</sub>
-> 
-> $$
-> \begin{aligned}
-> \begin{array}{rl}
->  & \tiny1& \tiny1 & \tiny1 & \\
->  & & 1 & 1 & 1 \\
-> + & & 0 & 1 & 1 \\
->  & & - & - & - \\
->  &1& 0 & 1 &  0
-> \end{array}
-> \end{aligned}
-> $$
-
-
-# fin test
 
 > [!tip] Astuce pour la base 16
 > 

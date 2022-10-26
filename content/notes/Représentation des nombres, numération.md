@@ -3,7 +3,7 @@ tags : info
 title: "Représentation des nombres"
 ---
 
-==**Document non finalisé**==
+**Document non finalisé**
 
 ## I Système de numération
 ### I.1 - Introduction
@@ -12,6 +12,7 @@ Un entier naturel N dans une base b, peut se décomposer tel que :
 $$N_{b} = \alpha_{p}\alpha_{p-1}...\alpha_{1}\alpha_{0}$$  avec les symboles $\alpha_{i} \rightarrow 0 < \alpha_{i}<b-1$   (i position du symbole -1 car le premier i est 0)
 
 > [!danger] Attention !
+> 
 > $N_{b} = \alpha_{p}\alpha_{p-1}...\alpha_{1}\alpha_{0}$ ne signifie pas que N peut s'écrire sous la forme d'une multiplication, c'est bien la suite de symboles qu'on représete.
 > Par exemple N = 12 avec $\alpha_{0} = 1$ et $\alpha_{1} = 2$
 
@@ -23,6 +24,7 @@ $$N_{(b)}\sum_{i=0}^{p} \alpha_{i}b^{i}$$ avec $b^{i}$ le poids associé au symb
 La signification du symbole dépend de son poids (donc de sa place dans la suite de symboles représentant le nombre) → **position du symbole très importante** 
 
 > [!example] Exemple
+> 
 > 15 $\neq$ 51
 > même symbole mais avec des positions différentes
 
@@ -34,6 +36,7 @@ Les symboles en base 10 : $0 < \alpha_{i}<9$
 Les poids sont des puissances de 10 positives : $10^{i}$
 
 > [!example] Décomposer 1987 en base 10
+> 
 > $1987 = 7\times 10^{0} + 9\times 10^{1} + 9\times 10^{2} + 1\times 10^{3}$
 > 7 est dit le **poids faible** (nombre tout à droite)
 
@@ -509,8 +512,3 @@ Donc en décomposant 8<sub>(16)</sub> :
 (car on a en base 16 : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, <mark style="background: #FF5582A6;">D</mark>, E, F, ==10==, 11, 12 ... 1A, 1B ... etc.)
 ```
 
-
----
-
-[_index](_index.md)
-[Accueil](_index.md)

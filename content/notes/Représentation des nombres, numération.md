@@ -402,11 +402,11 @@ Comme en décimal (indiquer les retenues)
 > $$
 > \begin{aligned}
 > \begin{array}{rl}
-> & 1& 1 & 1 & \\
-> && 1 & 1 & 1 \\
-> + && 0 & 1 & 1 \\
-> && - & - & - \\
-> &1& 0 & 1 &  0
+> ‧& 1& 1 & 1 & \\
+> ‧&‧& 1 & 1 & 1 \\
+> + &‧& 0 & 1 & 1 \\
+> ‧&‧& - & - & - \\
+> ‧&1& 0 & 1 &  0
 > \end{array}
 > \end{aligned}
 > $$
@@ -416,11 +416,11 @@ Comme en décimal (indiquer les retenues)
 > $$
 > \begin{aligned}
 > \begin{array}{rl}
-> & \tiny1& \tiny1 & \tiny1 & \\
-> && 1 & 1 & 1 \\
-> + && 0 & 1 & 1 \\
-> && - & - & - \\
-> &1& 0 & 1 &  0
+>  & \tiny1& \tiny1 & \tiny1 & \\
+>  & & 1 & 1 & 1 \\
+> + & & 0 & 1 & 1 \\
+>  & & - & - & - \\
+>  &1& 0 & 1 &  0
 > \end{array}
 > \end{aligned}
 > $$

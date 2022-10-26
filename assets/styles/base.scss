@@ -183,7 +183,7 @@ article {
     margin-top: 2em;
     font-size: 2em;
   }
-  
+
   & > .meta {
     margin: 0 0 1em 0;
     opacity: 0.7;
@@ -201,11 +201,11 @@ article {
 
       &.broken {
         opacity: 0.5;
-        background-color: transparent; 
+        background-color: transparent;
       }
     }
   }
-  
+
   & p {
     overflow-wrap: anywhere;
   }
@@ -295,7 +295,7 @@ footer {
   text-align: center;
   & ul {
     padding-left: 0;
-  } 
+  }
 }
 
 hr {
@@ -365,7 +365,7 @@ header {
   margin: 1em 0 2em;
 
   & > h1 {
-    font-size: 2em;
+    font-size: 4vw;
   }
 
   & > nav {
@@ -382,12 +382,13 @@ header {
     align-items: center;
     cursor: pointer;
     & > p {
+      font-size: 1em;
       display: inline;
-      padding: 0 1.5em 0 2em;
+      padding: 0 0 0 1em;
     }
   }
 
-  & svg {
+  & svg { //search icon
     cursor: pointer;
     width: 18px;
     min-width: 18px;
@@ -509,7 +510,7 @@ header {
 
   & > .section {
     display: flex;
-    align-items: center; 
+    align-items: center;
 
     @media all and (max-width: 600px) {
       & .tags {
@@ -521,11 +522,11 @@ header {
       font-weight: 700;
       margin: 0;
     }
-    
+
     & p {
       margin: 0;
       padding-right: 1em;
-      flex-basis: 6em; 
+      flex-basis: 6em;
     }
   }
 
@@ -598,7 +599,7 @@ header {
   & > p {
     margin: 0;
     padding: 0.5rem 0;
-  } 
+  }
 
   & > p, & > a {
     font-size: 1rem;
@@ -618,4 +619,3 @@ header {
     padding: 0 1em;
   }
 }
-

@@ -20,9 +20,21 @@ Pour passer de la forme algébrique à une autre, il faut calculer le module et 
 - **Inégalité triangulaire :** $|z+z'| \leq |z|+|z'|$    
 ## Propriétés de l'argument
 **Définition de l'argument :** 
+
+$$
+\begin{equation*}
+  \theta = arg(z)(mod(2\pi)) \iff
+     \begin{cases}
+        \cos{\theta}=\frac{Re(z)}{|z|} \\
+        \sin{\theta}=\frac{Im(z)}{|z|}
+     \end{cases}
+\end{equation*}
+$$
+
 $$
 \theta = arg(z)(mod(2\pi)) \iff \left \{\begin{array}{rcl}\cos{\theta}=\frac{Re(z)}{|z|} \\\sin{\theta}=\frac{Im(z)}{|z|}\end{array}\right.
 $$
+
 - $arg(\overline{z}) =-arg(z) (mod~2\pi)$
 - $arg(-\overline{z}) =\pi-arg(z) (mod~2\pi)$ 
 - $arg(z) =\pi+arg(z) (mod~2\pi)$
@@ -97,4 +109,7 @@ Par exemple, pour $z^{2}=|z|\cdot e^{i\theta}$, ses racines sont $z_{1}=|z|^{1/2
 
 Pour trouver les racines $n$-ièmes, il faut trouver la racine évidente ($z_{1}=|z|^{1/n}e^{\frac{i\theta}{n}}$) et les racines $n$-ièmes de l'unité, c'est-à-dire, les solutions de : $w^{n}=1$ 
 
-[Retourner à l'accueil](_index.md)
+---
+
+[_index](_index.md)
+[Accueil](_index.md)

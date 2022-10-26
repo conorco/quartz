@@ -1,3 +1,8 @@
+---
+title: "Maths"
+tags:
+- maths
+---
 Plusieurs fiches sur ce site ont pour sujet les maths.
 
 ## Algèbre

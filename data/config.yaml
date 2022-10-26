@@ -15,11 +15,13 @@ GitHubLink: https://github.com/conorco/quartz
 enableSemanticSearch: false
 operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
 description:
-  "Notes de Conor, un peu de tout"
+  "Vrakonor - mes notes en vrak"
 page_title:
-  "🤷🏻‍♂️ notes en vrac"
+  "⚡ vrakonor ⚡"
 links:
   - link_name: Twitter
     link: https://twitter.com/hzkoboy
   - link_name: Github
     link: https://github.com/conorco
+  - link_name: Mastodon
+    link: https://eldritch.cafe/@hzk

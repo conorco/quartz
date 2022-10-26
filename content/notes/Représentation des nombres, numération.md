@@ -1,5 +1,7 @@
 ---
-tags : info
+tags : 
+ - info
+ - maths
 title: "Représentation des nombres"
 ---
 
@@ -416,7 +418,7 @@ Comme en décimal (indiquer les retenues)
 > \begin{array}{rl}
 >   & ① & \\
 >  & 6 & 8 \\
-> +   & 3 & A \\
+> \text{+}   & 3 & A \\
 >  & - & - \\
 >  & A &  2
 > \end{array}
@@ -441,7 +443,7 @@ Comme en décimal (indiquer les retenues)
 > \begin{aligned}
 > \begin{array}{rl}
 > & 1 & 1 & 1 \\
-> - & 0 & 1 & 1 \\
+> \text{-} & 0 & 1 & 1 \\
 > & - & - & - \\
 > & 1 & 0 &  0
 > \end{array}
@@ -454,7 +456,7 @@ Comme en décimal (indiquer les retenues)
 > \begin{aligned}
 > \begin{array}{rl}
 > & 1 & _{①}0 & _{①}0 \\
-> - &  _{+①}0 & _{+①}1 & 1 \\
+> \text{-} &  _{+①}0 & _{+①}1 & 1 \\
 > & - & - & - \\
 > & 0 & 0 &  1
 > \end{array}
@@ -473,7 +475,7 @@ Comme en décimal (indiquer les retenues)
 > \begin{aligned}
 > \begin{array}{rl}
 >  & 6 & _{①}8 \\
->  - & _{+①}3 & A \\
+>  \text{-} & _{+①}3 & A \\
 >  & - & - \\
 >  & 2 &  E
 > \end{array}

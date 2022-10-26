@@ -1,5 +1,5 @@
 baseURL = "https://quartz.konor.fr/"
-languageCode = "en-us"
+defaultContentLanguage = 'fr'
 googleAnalytics = "G-XYFD95KB4J"
 relativeURLs = false
 disablePathToLower = true
@@ -32,3 +32,10 @@ enableGitInfo = true
         publishDate = ["publishDate", "date"]
     [markup.goldmark.renderer]
         unsafe = true
+
+
+defaultContentLanguage = 'fr'
+  [languages]
+    [languages.fr]
+      title = '⚡ vrakonor ⚡'
+      weight = 1

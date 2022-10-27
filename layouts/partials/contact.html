@@ -9,12 +9,12 @@
         <p>{{ i18n "copyright" (dict "name" $name "year" $year) | safeHTML}}</p>
         <ul>
             {{ if not .IsHome }}
-            <li><a href="{{ $.Site.BaseURL}}">{{ i18n "home" }}</a></li>
+            <li><a href="{{ $.Site.BaseURL}}"><i class="fa-solid fa-house" style="color: --secondary" title="Accueil"></i></a></li>
             {{end}}
             {{- range $data.links | default $.Site.Data.config.links -}}
-            <li><a href="{{.link}}">{{.link_name}}</a></li>
+            <li><a href="{{.link}}"><i class="fa-brands fa-{{.link_name}}" style="color: --secondary" title="{{.link_name}}"></i></a></li>
             {{- end -}}
-            <li><a rel="me" href="https://eldritch.cafe/@hzk">Mastodon</a></li>
+
         </ul>
     </footer>
 </div>

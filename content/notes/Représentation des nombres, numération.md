@@ -373,8 +373,8 @@ Donc la conversion est assez rapide car on peut faire des paquets de bits
 > Soit :  0001 0111,0100<sub>(2)</sub> = 17,4<sub>(16)</sub>
 
 
-### III Opérations
-#### Additions
+## III Opérations
+### Additions
 Comme en décimal (indiquer les retenues)
 
 
@@ -426,13 +426,14 @@ Comme en décimal (indiquer les retenues)
 > \end{aligned}
 > $$
 
-#### Soustractions
+### Soustractions
 
 
 > [!info] Règles pour la base 2
 > 
 > 1<sub>(2)</sub> - 1<sub>(2)</sub> = 0
-10<sub>(2)</sub> - 1<sub>(2)</sub> = 1
+> 
+> 10<sub>(2)</sub> - 1<sub>(2)</sub> = 1
 
 
 

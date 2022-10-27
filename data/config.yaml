@@ -19,7 +19,9 @@ description:
 page_title:
   "⚡ vrakonor ⚡"
 links:
-  - link_name: Twitter
+  - link_name: twitter
     link: https://twitter.com/hzkoboy
-  - link_name: Github
+  - link_name: mastodon
+    link: https://eldritch.cafe/@hzk
+  - link_name: github
     link: https://github.com/conorco

@@ -138,7 +138,7 @@ Méthodes différentes pour passer de la base 10 au cpt2 pour les nombres **posi
 > Représentation utilisée pour les entiers par les ordinateurs
 > 
 > bit de signe, S=poids fort (situé à gauche) = MSB
-> - S=0 : signe **poisitif**
+> - S=0 : signe **positif**
 > - S=1 : signe **négatif**
 >   
 >  Nombre de **bits fixé** (bits restants servent à la valeur de l'entier)
@@ -152,7 +152,7 @@ Méthodes différentes pour passer de la base 10 au cpt2 pour les nombres **posi
 > [!example] Exemple méthode 0
 > 
 > $N_{10} = -11 = 1111 0101_{cpt2}$
-> - Calcul de $2^{k}-N$ : $2^{8}-11 = 256 - 11 = 24$
+> - Calcul de $2^{k}-N$ : $2^{8}-11 = 256 - 11 = 245$
 > - Conversion en binaire : $24_{10}=1111 0101_{cpt2}$
 
 > [!warning] Ne pas confondre format et calcul

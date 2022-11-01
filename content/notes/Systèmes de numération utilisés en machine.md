@@ -193,7 +193,7 @@ Donc, **sur k bits**, on peut représenter les **entiers de $\bf{-2^{k-1}}$ à $
 > 
 > Car il y a 1 bit de réservé pour le bit de signe ! (S=0 si positif, 1 sinon)
 
-Par exemple sur 3 bits, on va de $-2^{2}\ \text{à} \ 2^2-1$ donc de $-4 \ \text{à} \ 3$:
+Par exemple sur 3 bits, on va de $-2^{2} \text{ à }  2^2-1$ donc de $-4  \text{ à }  3$:
 
 | -4  | -3  | -2  | -1  | 0   | 1   | 2   | 3   |
 | --- | --- | --- | --- | --- | --- | --- | --- |

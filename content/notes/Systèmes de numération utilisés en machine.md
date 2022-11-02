@@ -1,7 +1,7 @@
 ---
+title: "Systèmes de numération utilisés en machine"
 tags:
 - info
-title: "Systèmes de numération utilisés en machine"
 ---
 
 # Introduction

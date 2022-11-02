@@ -1,8 +1,8 @@
 ---
+title: "Représentation des nombres"
 tags : 
  - info
  - maths
-title: "Représentation des nombres"
 ---
 
 ## I Système de numération

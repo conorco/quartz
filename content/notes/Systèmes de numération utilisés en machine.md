@@ -312,9 +312,153 @@ Il est donc bien nécessaire d'<mark style="background: #FF5582A6;">afficher la 
 
 # Représentation des nomrbres réels ↪ nombres flottants
 ## Représentation en virgule flottante
+Nombre réel = abus de langage sur un ordinateur ↪ plutôt un **rationel avec un nombre fini de chiffres**
 
-## Représentation en norme IEEE754
+Représentation en virgule fixe (nb de chiffres constants après la virgule) : pose des problèmes avec les petits et grands nombres donc **pas utilisable**
 
+> [!example] Représentation virgule fixe
+> 
+> - masse du soleil : 19891 0...0 (... = 24 zéros)
+> - masse d'un électron : 0,0...09109 g (...= 25 zéros)
+>   
+>   Stockage énorme en nombre de bits nécessaires
+
+On utilise donc la **représentation en virgule floattante**
+
+> [!info] Réprésentation en virgule flottante
+> 
+> - basée sur la notation scientifique avec exposant (la virgule flotte)
+> - nombre représenté de manière compacte
+>   
+>   Avec les exemples précédents :
+> - masse du soleil : 1,9891$\cdot 10^{30}$ kg
+> - masse d'un électron : 9,109 $\cdot 10^{-29}$ g
+> 
+> Ecriture des nombres réels sous forme flottante : $n=(-1)^{s}\times m\times b^{e}$ avec :
+> - s ↪ signe (=0 ou 1)
+> - b ↪ base (en écriture scientifique : base 10)
+> - e ↪ exposant (ordre de grandeur) qui peut être négatif ou positif
+> - m ↪ mantisse (chiffres significatifs de $n$) > 0
+
+> [!example] Application de la représentation
+> 
+> Masse du soleil : 1,9891$\cdot 10^{30}$ kg
+> - s ↪ 0
+> - b ↪10
+> - e ↪ 30
+> - m ↪ 1,9891
+
+## Représentation en norme IEEE^[Institute of Electrical and Electronics Engineers]754
+
+Nombres à virgules flottantes en **binaire** ↪ représentation par le standard IEEE754 pour ecrire le nombre n réel sous la forme :  $n=(-1)^{s}\times m\times \bf{2}^{e}$ 
+
+Le format IEEE754 est une norme définie par :
+$$
+(-1)^{s}\times m\times 2^{e}=(-1)^{s}\times 1,M\times 2^{(E-d)} 
+$$
+avec donc : 
+- s ↪ signe = 0 ou 1
+- b ↪base = 2
+- e= E-d ↪ exposant $\ge$ 0 (car pas possible de mettre un format si négatif)
+	  d est un décalage connu constant
+- m=1,M ↪ mantisse
+
+La représentation par le standard IEEE754 s'écrit tel que : **SEM**<sub>(2)</sub> avec :
+
+| le signe S (1 bit) | l'exposant E (k bits)   | la mantisse M (n-k-1) bits |
+| ------------------ | ----------------------- | -------------------------- |
+| 0 ou 1             | e transformé en binaire | chiffres signficatifs      |
+
+
+> [!info] Calculer E = exposant
+> 
+> - E = e+d = exposant biaisé/décale qui est codé sur k bits
+> - $e_{min}=-2^{k-1+2}$ et $e_{max}=2^{k-1}-1$
+> - Donc, pour connaître E, on doit connaître **d** = biais/décalage (dépend du format) = $2^{k-1}-1$ (k est connu = nombre de bits)
+> - D'où : <mark style="background: #FFF3A3A6;">$E_{min}=1$ et $E_{max}=2^{k}-2$ </mark>(les valeurs de 0 ($E_{min}-1$) et de $2^{k}-1$ ($E_{max}+1$) sont des **cas particuliers**)
+
+> [!info] Calculer M = mantisse
+> 
+> Pour un nombre en base 10 tel que : $m=\textcolor{red}{1\times 2^{0}}+a_{-1}\times 2^{-1} \text{...}$ (<mark style="background: #FF5582A6;">bit caché</mark> qu'on ne représente pas due à la normalisation de la mantisse)
+> 
+> On a $M_{2}=a_{1}a_{2}\text{...}$
+
+> [!example] Exemple avec 1ère méthode
+> 
+> Avec k = 3, donc E codé sur 3 bits :
+> 
+> - valeurs de 000 à 111 (de 0 à 7)
+> - Les valeurs 0 et 7 sont des cas particuliers donc E peut prendre comme valeurs de 1 à 6 (001 à 110 en binaire)
+> - e (exposant "normal") va de -2 à 3 (le décalage d est $d=2^{k-1}-1= 2^{2}-1= 3$)
+> 
+> Mantisse : sur 3 bits M va de 000 à 111 donc m de 1 à 1,111
+> 
+> *Exemple pour convertir $6_{10}$ dans ce format flottant*
+> 
+> $6_{10}=1\times 2^{2}+1\times 2^{1}+0\times 2^{0} = 110_{2}$
+> 
+> On divise tout la puissance maximale : $6_{10}=\frac{1\times 2^{2}}{2^{2}} + \frac{1\times 2^{1}}{2^{2}}+\frac{0\times 2^{0}}{2^{2}} \times 2^{2}$, ce qui revient à $[1\times 2^{0}+1\times 2^{-1}+1\times 2^{-2}]\times 2^{2}$ (ressemble bien à quelque chose de la forme : $(-1)^{s}\times 1,M\times 2^{(E-d)}$)
+> 
+> Donc, on a finalement : $6_{10}=[1\times 2^{0}+1\times 2^{-1}+1\times 2^{-2}]\times 2^{\textcolor{red}{2}}=1,10_{2}$
+> 
+> Donc M = 10<mark style="background: #FFF3A3A6;">0</mark> (car on est sur 3 bits) et E = <mark style="background: #FF5582A6;">e</mark>+d = 2 + 3 = 5 = $101_{2}$
+> 
+> D'où finalement : $6_{10}$ 0 101 100 (format IEEE 7 bits)
+
+> [!example] Exemple avec 2ème méthode
+> 
+> Méthode - rigoureuse car on **mélange des bases** pour représenter le format IEEE754
+> 
+> 1. 6 en binaire : 110
+> 2. On décale la virgule pour avoir un nombre de la forme "1,...." donc : **1,10**
+> 3. Comme on a décalé de 2 rangs, on multiplie par $2^{2}$ donc $1,10_{(2)} \times 2^{2}_{(10)}$ (donc on mélange les bases)
+> 
+> On a donc directement :
+> - M = 10 en décimal donc 100 en binaire
+> - e = 2 donc comme E = e + d = 2+3 = 5 en décimal donc 101 en binaire
+> 
+> Ce qui nous donne $6_{(10)} =$ 0 101 100 en format IEEE754
+
+> [!example] Exemple avec une troisième méthode
+> 
+> Calcul qui devient vite fastidieux pour de grands nombres
+> 
+> 1. Trouver la puissance de 2 la plus proche de 6
+> 2. Diviser par cette puissance de 2 : $\frac{6}{4}=1,5$ donc $6_{10}= 1,5 \times 2^{2}$ donc on est déjà sous la forme d'un flottant en puissance de 2
+> 
+> - m en base 10 = 1,5 donc m en binaire = 1,100
+> - e =2 donc E = 5 en base 10 donc 101 en binaire
+> 
+> On retrouve bien le résultat : $6_{(10)} =$ 0 101 100 en format IEEE754
+
+### Format *réellement* utilisés dans l'ordinateur
+Couramment ↪ 32 et 64 bits
+
+| Format                    | Nb de bits | bits dans S | bits dans E | Décalage d        | bits de M | 
+| ------------------------- | ---------- | ----------- | ----------- | ----------------- | --------- |
+| Simple precision (float)  | 32         | 1           | 8           | 127 = $2^{7}-1$   | 23        |
+| Double precision (double) | 64         | 1           | 11          | 1023 = $2^{10}-1$ | 52        |
+
+Avec la double precision : on peut représenter un plus grand nombre de nombre (+ petits et + grands)
+
+**Limites de la représentation (32 bits)**
+![figure avec underflow et overflow pour illustrer les limites de la représentation en 32 bits](../images/Pasted%20image%2020221107161804.png)
+Donc :
+- **Underflow** : on ne peut pas représenter des valeurs plus petites que l'ordre de $10^{-38}$
+- **Overflow** : on ne peut pas représenter des valeurs plus grandes que l'ordre $10^{38}$ 
+
+(On peut utiliser des supercalculateurs pour effectuer les calculs sur des nombres très grands/très petits)
+
+> [!example] Convertir 25,5 en IEEE sur 32 bits
+> 
+> **1ère méthode** :
+> - Décomposition en puissance de 2 : 25,5 = 16 + 8 + 1 + 0,5 = $1 \times 2^{4} + 1 \times 2^{3} + 0 \times 2^{2} + 0 \times 2^{1} + 1 \times 2^{0} + 1 \times 2^{-1}$
+> - Division par $2^{4}$ : $[1 \times 2^{0}+ 1 \times 2^{-1} + 0 \times 2^{-2} + 0 \times 2^{-3} + 1 \times 2^{-4} +1\times 2^{-5}] \times 2^{\bf{4}}$
+> - Donc e = 4 en décimal donc **E = 4 +127 = 131** = $10000011_{(2)}$
+> - Pour la mantisse : m = 1,110011 donc M = 10011(0) où (0) représente 18 0 pour arriver à 23 bits au total
+> - Le nombre est donc : 0 10000011 10011(0)
+
+video 11
 ## Opérations sur les flottants
 
 

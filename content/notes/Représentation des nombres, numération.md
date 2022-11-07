@@ -493,6 +493,6 @@ Comme en décimal (indiquer les retenues)
 > 15<sub>(16)</sub> - <mark style="background: #BBFABBA6;">8<sub>(16)</sub></mark>
 > Pour aller à 10<sub>(16)</sub>, on a : 15<sub>(16)</sub> - 5<sub>(16)</sub>
 > Donc en décomposant 8<sub>(16)</sub> :
-> 15<sub>(16)</sub> <mark style="background: #BBFABBA6;">- 5<sub>(16)</sub> - 3<sub>(16)</sub></mark> = ==10<sub>(16)</sub>== - 3<sub>(16)</sub> = <mark style="background: #FF5582A6;">D<sub>(16)</sub></mark>
+> 15<sub>(16)</sub> <mark style="background: #BBFABBA6;">- 5<sub>(16)</sub> - 3<sub>(16)</sub></mark> = <mark style="background: #FFF3A3A6;">10<sub>(16)</sub></mark> - 3<sub>(16)</sub> = <mark style="background: #FF5582A6;">D<sub>(16)</sub></mark>
 > 
-> (car on a en base 16 : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, <mark style="background: #FF5582A6;">D</mark>, E, F, ==10==, 11, 12 ... 1A, 1B ... etc.)
+> (car on a en base 16 : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, <mark style="background: #FF5582A6;">D</mark>, E, F, <mark style="background: #FFF3A3A6;">10</mark>, 11, 12 ... 1A, 1B ... etc.)

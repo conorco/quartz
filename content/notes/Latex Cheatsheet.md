@@ -19,9 +19,11 @@ tags:
 
 | Action                                | Commande Latex    | Résultat          |
 | ------------------------------------- | ----------------- | ----------------- |
-| différent de                          | `\neq`            | $\neq$            |
 | équivalent à                          | `\iff`            | $\iff$            |
-| pour tout                             | `\forall`         | $\forall$         | 
+| supérieur ou égal                     | `\ge`             | $\ge$             |
+| inférieur ou égal                     | `\leq`             | $\leq$                  |
+| différent de                          | `\neq`            | $\neq$            |
+| pour tout                             | `\forall`         | $\forall$         |
 | somme                                 | `\sum_{i =0}^{N}` | $\sum_{i =0}^{N}$ |
 | ensembles mathématiques (exemple : N) | `\mathbb{N}`      | $\mathbb{N}$      |
 |                                       |                   |                   |

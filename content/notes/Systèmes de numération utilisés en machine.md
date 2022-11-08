@@ -348,7 +348,8 @@ On utilise donc la **représentation en virgule floattante**
 > - e ↪ 30
 > - m ↪ 1,9891
 
-## Représentation en norme IEEE^[Institute of Electrical and Electronics Engineers]754
+## Représentation en norme IEEE[^1]754
+[^1]: Institute of Electrical and Electronics Engineers
 
 Nombres à virgules flottantes en **binaire** ↪ représentation par le standard IEEE754 pour ecrire le nombre n réel sous la forme :  $n=(-1)^{s}\times m\times \bf{2}^{e}$ 
 
@@ -457,8 +458,137 @@ Donc :
 > - Donc e = 4 en décimal donc **E = 4 +127 = 131** = $10000011_{(2)}$
 > - Pour la mantisse : m = 1,110011 donc M = 10011(0) où (0) représente 18 0 pour arriver à 23 bits au total
 > - Le nombre est donc : 0 10000011 10011(0)
+>   
+>   **2ème méthode** :
+>   - Passage de 25,5 en binaire : 11001,1
+>   - Sous la forme "1,..." : $(-1)^{0}\times 1,10011 \times 2^{4}$ (décalage de 4 rangs de la virgule)
+>   - Donc e = 4 donc E = 131 =  $10000011_{(2)}$
+>   - M = 10011(0)
+>  
+>  **3ème méthode** :
+>  - Division du nombre décimal par la puissance de 2 la plus proche ($2^{4}$) donc : $\frac{25,5}{16} = 1,59375$
+>  - Ecriture sous le bon format : $(-1)^{0}\times 1,59375 \times 2^{4}$
+>  - On a bien e=4 donc E = 131
+>  - m=1,59375 en décimal donc on retrouve bien la mantisse en repassant en binaire
 
-video 11
+> [!warning] Ne pas oublier le **bit caché**
+> 
+> m = 1,M, et on ne représente que M en écrivant le nombre sous format IEEE754
+> 
+> Mais la mantisse commence bien par un bit = 1 qui est donc le + significatif mais qui est **implicite**
+
+
+> [!bug] Cas particuliers
+> 
+> *Quand E = 0 ou E = $2^{k}-1$*
+> 
+>| Cas                   | Mantisse       | Exposant                         | Signe                        |
+>| --------------------- | -------------- | -------------------------------- | ---------------------------- |
+>| Codage du 0           | M = 0...0      | E = 0                            | S = 0 ou 1                   |
+>| Codage du $\pm\infty$ | M = 0...0      | E = Emax + 1 (tous les bits à 1) | S = O ou 1 (dépend du signe) |
+>| Codage du NaN[^2]     | M $\neq$ 0...0 | E = Emax + 1 (tous les bits à 1) | S = O ou 1 (dépend du signe) | 
+
+[^2]: Not a Number
+
+> [!tip] Puissance d'une unité de calcul
+> 
+> Pour calculer la complexité d'un programme : on regarde le nombre d'opérations par seconde sur les flottantes (**Floops** = Floating poiint Operations Per Second)
+> 
+> Les flottants peuvent mener à des erreurs (cf sur [python](https://docs.python.org/3/tutorial/floatingpoint.html)) dans les calculs scientifiques
+
 ## Opérations sur les flottants
 
+- Additions et soustraction ↪ avoir les mêmes exposants (le plus élevé pour conserver l'ordre de grandeur) ↪ peut impliquer une perte de précision
+- Multiplication ↪ perte d'information (arrondi au plus près)
 
+> [!tip] Affichage des nombres au format IEEE754
+> 
+> On affiche généralement les nombres au format **hexadécimal** ce qui permet un affichage plus compact (32 bits devient 8 symboles)
+
+### Additions et soustractions
+> [!tldr] Méthode d'addition avec des flottants
+> 1. Convertir les nombres au format IEEE754
+> 2. Mettre au même exposant (le plus grand) ↪ passer l'étape si même exposant. Décalage de la mantisse associé à l'exposant le plus petit
+> 3. Faire le calcul sur les mantisses **sans oublier le bit caché**
+> 	- Si les nombres de même signe alors addition binaire
+> 	- sinon alors cpt2 du négatif
+> 4. Remettre sous format flottant en décalant si besoin la valeur de l'exposant 
+
+#### Flottants de même signe
+
+> [!example] Exemple d'opération
+> 
+> Calculer 3 + 15
+> 
+> 1. Convertir les nombres en format IEEE754 sur 32 bits
+> 	- 3$_{10}$ =  0 10000000 100(0)$_{2}$ (avec (0) = 20 zéros) = 4040 0000$_{16}$
+> 	- 15$_{10}$ =  0 10000010 111(0)$_{2}$ (avec (0) = 20 zéros) = 4170 0000$_{16}$
+> 
+> 2. Ici l'exposant le plus grand est $E_{2}$ = 1000 0010
+> 	- $E_{1} = 1000 0000$ donc on doit ajouter <mark style="background: #FFF3A3A6;">+2</mark> à $E_{1}$ pour avoir le même exposant
+> 	 - Donc décalage à gauche de <mark style="background: #FFF3A3A6;">2 rangs</mark> de la mantisse ↪ $m_{2}=0,011$ (**ne pas oublier le bit caché**)
+> 3.  Calcul sur les mantisses = 10,0100000 :
+>    ![calcul posé de l'addition des 2 mantisses|200](../images/Pasted%20image%2020221108122639.png)
+> 4. Remettre sous forme de flottant pour avoir "1,..." : on décale d'un rang vers la droite ce qui ajoute **+1** à l'exposant : $10,0100000\times 2^{E_{2}} \Rightarrow 1,00100000 \times 2^{E_{2}+1}$
+> 5. Finalement, on a : <mark style="background: #BBFABBA6;">0</mark> <mark style="background: #ADCCFFA6;">10000011</mark> <mark style="background: #FF5582A6;">001(0)$_{2}$</mark> = 4190 0000$_{16}$ avec <mark style="background: #BBFABBA6;">le signe</mark>, <mark style="background: #ADCCFFA6;">l'exposant</mark> et la <mark style="background: #FF5582A6;">mantisse</mark>
+
+> [!tip] Opérations avec le même signe
+> 
+> Le résultat est le même, seul le signe change. Par exemple, les calculs $3+15$ et $-3-15$ auront le même exposant et la même mantisse mais un signe différent (respectivement 0 et 1)
+
+#### Flottants de signes différents
+
+La seule différence est pour l'étape 3 (addition des mantisses), **on utilise donc le cpt2 du négatif**
+
+> [!example] Exemple d'opération : 3-15
+> 
+> - mantisse de 3 modifiée : $m_{1}=0,011(0)$
+> - mantisse de 15 : $m_{2}=111(0)$
+>   
+>   Donc on effectue en fait : $m_{1}-m_{2}=m_{1}+(-m_{2})$, d'où la nécessité de calculer le complément à 2 de $m_{2}$
+>   
+>  Donc : $-m_{2}=\textcolor{red}{1}0,0010...0$, <mark style="background: #FF5582A6;">1</mark> correspond au signe négatif de $-m_{2}$
+>  
+>  3. Calcul : ![calcul posé de m1 + (-m2)|200](../images/Pasted%20image%2020221108152948.png)
+>  
+>  Le résultat est <mark style="background: #FF5582A6;">1</mark>0,10...0 qui est toujours <mark style="background: #FF5582A6;">négatif</mark> (donc S=1)donc à repasser en complément à 2
+>  
+>  La mantisse finale est donc : **01,10...0** = m
+>  
+>  4. Dernière étape : remettre sous format flottant
+>  - E = $E_{2} = 1000 0010$
+>  - M = 10...0
+>  - S =1
+>
+>Donc **3-15$_{10}$ =  1 1000 0010 100(0)$_{2}$** = C140 0000$_{16}$
+
+
+> [!tip] Pour calculer quand signes opposés
+>
+> Le résultat de $3-15$ et $15 -3$ est le même, seuls S change.
+> 
+> En général, ou soustrait toujours la mantisse la plus petite donc effectue $15-3$
+
+# Les formats dans différents langages
+## Python 3
+- int (pas de format long contrairement au C)
+- float
+
+> [!tip] Formats dans Python
+> 
+> - Possible de forcer le typage sous python, avec `a=float(3)` (car sinon int)
+> - `type()` permet de connaître le type
+> - Booléens = `bool` sous python
+
+Utiliser [numpy](https://www.numpy.org/) pour le calcul scientifique
+
+## En C
+Typage **obligatoire**
+
+- Float/double
+- Simple précision
+- Double précision
+- Signed short int
+- Unsigned short int
+- Signed long int
+- Unsigned long int

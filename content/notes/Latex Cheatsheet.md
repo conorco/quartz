@@ -21,9 +21,12 @@ tags:
 | ------------------------------------- | ----------------- | ----------------- |
 | équivalent à                          | `\iff`            | $\iff$            |
 | supérieur ou égal                     | `\ge`             | $\ge$             |
-| inférieur ou égal                     | `\leq`             | $\leq$                  |
+| inférieur ou égal                     | `\leq`            | $\leq$            |
 | différent de                          | `\neq`            | $\neq$            |
 | pour tout                             | `\forall`         | $\forall$         |
 | somme                                 | `\sum_{i =0}^{N}` | $\sum_{i =0}^{N}$ |
 | ensembles mathématiques (exemple : N) | `\mathbb{N}`      | $\mathbb{N}$      |
-|                                       |                   |                   |
+| plus ou moins                         | `\pm`             | $\pm$             |
+| infini                                | `\infty`          | $\infty$          |
+| implication droite                    | `\Rightarrow`     | $\Rightarrow$     |
+| implication gauche                    | `\Leftarrow`      | $\Leftarrow$                  |

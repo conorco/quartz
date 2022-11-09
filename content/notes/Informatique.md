@@ -4,4 +4,5 @@ tags:
 - info
 ---
 Des notes en informatiques :
-- [Représentation des nombres, numération](notes/Représentation%20des%20nombres,%20numération.md)
+- [Numération : formats utilisés en machine](Systemes_num.md)
+- [Numération : représentation des nombres](Representation_num.md)

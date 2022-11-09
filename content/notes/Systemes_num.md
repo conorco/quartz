@@ -5,7 +5,7 @@ tags:
 ---
 
 # Introduction
-Dans [Représentation des nombres, numération](Représentation%20des%20nombres,%20numération.md), on a vu la représentation générale des nombres dans toutes les bases
+Dans [Numération : représentation des nombres](Representation_num.md), on a vu la représentation générale des nombres dans toutes les bases
 
 On va voir ici comment les nombres sont codés dans un ordinateur : le **format** $\neq$ **nombres**.
 - Limitations physiques (tailles des "mots" limités : 16, 32 ou 64 bits donc nombre d'octects fixes)
@@ -18,7 +18,7 @@ On va voir ici comment les nombres sont codés dans un ordinateur : le **format*
 ## Définition
 S'utilise principalement pour les systèmes d'affichages des valeurs numériques et dans les machines à calculer.
 
-Chaque **chiffre** décimal (de 0 à 9) est codé sur 4 bits (voir [pour le passage en binaire](Représentation%20des%20nombres,%20numération.md))
+Chaque **chiffre** décimal (de 0 à 9) est codé sur 4 bits (voir [pour le passage en binaire](Representation_num.md))
 
 | Poids | $2^3$ | $2^2$ | $2^1$ | $2^0$ |
 | ----- | ----- | ----- | ----- | ----- |
@@ -102,7 +102,7 @@ Ce format (cpt2) est à **nombre de bits fixé** (16, 32 ou 64 bits)
 
 Méthodes différentes pour passer de la base 10 au cpt2 pour les nombres **positifs** et **négatifs**
 
-- **Nombres positifs** : pareil que le binaire pour passer de base 10 à 2 (cf [Représentation des nombres, numération](Représentation%20des%20nombres,%20numération.md)
+- **Nombres positifs** : pareil que le binaire pour passer de base 10 à 2 (cf [page sur la représentation des nombres dans différentes bases](Representation_num.md)
 - **Nombres négatifs** : utilisation du complément à 2
 
 > [!hint] Rappel : complément

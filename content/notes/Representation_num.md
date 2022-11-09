@@ -498,4 +498,4 @@ Comme en décimal (indiquer les retenues)
 > (car on a en base 16 : 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, A, B, C, <mark style="background: #FF5582A6;">D</mark>, E, F, <mark style="background: #FFF3A3A6;">10</mark>, 11, 12 ... 1A, 1B ... etc.)
 
 # Conclusion
-On a vu les différentes manières de coder un nombre dans différentes bases. Les nombres ne sont pas directement codés en binaire, ou en hexadécimal, il existe des **formats** pour les  [coder en machine](Systèmes%20de%20numération%20utilisés%20en%20machine.md).
+On a vu les différentes manières de coder un nombre dans différentes bases. Les nombres ne sont pas directement codés en binaire, ou en hexadécimal, il existe des **formats** pour les  [coder en machine](Systemes_num.md).

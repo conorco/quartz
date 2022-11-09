@@ -1,5 +1,5 @@
 ---
-title: "Représentation des nombres"
+title: "Numération : représentation des nombres"
 tags : 
  - info
  - maths

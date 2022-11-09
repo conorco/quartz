@@ -1,5 +1,5 @@
 ---
-title: "Systèmes de numération utilisés en machine"
+title: "Numération : formats utilisés en machine"
 tags:
 - info
 ---

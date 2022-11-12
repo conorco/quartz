@@ -23,10 +23,11 @@ tags:
 | supérieur ou égal                     | `\ge`             | $\ge$             |
 | inférieur ou égal                     | `\leq`            | $\leq$            |
 | différent de                          | `\neq`            | $\neq$            |
+| il existe                             | `\exists`         | $\exists$         | 
 | pour tout                             | `\forall`         | $\forall$         |
 | somme                                 | `\sum_{i =0}^{N}` | $\sum_{i =0}^{N}$ |
 | ensembles mathématiques (exemple : N) | `\mathbb{N}`      | $\mathbb{N}$      |
 | plus ou moins                         | `\pm`             | $\pm$             |
 | infini                                | `\infty`          | $\infty$          |
 | implication droite                    | `\Rightarrow`     | $\Rightarrow$     |
-| implication gauche                    | `\Leftarrow`      | $\Leftarrow$                  |
+| implication gauche                    | `\Leftarrow`      | $\Leftarrow$      |

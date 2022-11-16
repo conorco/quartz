@@ -2,6 +2,7 @@
 title: "Numération : formats utilisés en machine"
 tags:
 - info
+- codage
 ---
 
 # Introduction

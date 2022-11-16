@@ -11,7 +11,7 @@ enableFooter: true
 enableContextualBacklinks: true
 enableRecentNotes: true
 enableGitHubEdit: false
-GitHubLink: https://github.com/conorco/quartz
+GitHubLink: https://github.com/hzkonor/quartz
 enableSemanticSearch: false
 operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
 description:
@@ -24,4 +24,4 @@ links:
   - link_name: mastodon
     link: https://eldritch.cafe/@hzk
   - link_name: github
-    link: https://github.com/conorco
+    link: https://github.com/hzkonor

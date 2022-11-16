@@ -22,12 +22,13 @@ Le tableau ci-après mentionne les domaines de définition des fonctions usuelle
 | $\ln{x}$          | $\mathbb{R}^{*}_{+}$  | $\frac{1}{x}$        | $\mathbb{R}^{*}_{+}$ |                        |
 | $\cos{x}$         | $\mathbb{R}$          | $-\sin{x}$           | $\mathbb{R}$         |                        |
 | $\sin{x}$         | $\mathbb{R}$          | $\cos{x}$            | $\mathbb{R}$         |                        |
+| $\sqrt{x}$         | $\mathbb{R}_{+}$          | $\frac{1}{2\sqrt{x}}$            | $\mathbb{R}_{+}$         |                        |
 
 # Parité des fonctions
 
 Soit $f: A \rightarrow B$ une application.
-- f est **paire** si : $\forall x \in A, -x\in A \text{ et } f(-x)=f(x)$ 
-- f est **impaire** si : $\forall x \in A, -x\in A \text{ et } f(-x)=-f(x)$ 
+- f est **paire** si : $\forall x \in A, -x\in A \text{ et } f(-x)=f(x)$
+- f est **impaire** si : $\forall x \in A, -x\in A \text{ et } f(-x)=-f(x)$
 
 Les graphes des fonctions paires et impaires possèdent une symétrie :
 
@@ -39,7 +40,7 @@ Les graphes des fonctions paires et impaires possèdent une symétrie :
 # Injectivité, surjectivité, bijectivité
 Soit $f: A \rightarrow B$ une application.
 - f est **injective** si : $\forall x \in A, x'\in A,f(x)=f(x')\Rightarrow x=x'$, c'est-à-dire qu'il existe au plus 1 seul $x \in A$ tel que $f(x)=y$
-- f est **surjective** si : $\forall y\in B, \exists x\in A, f(x)=y$ 
+- f est **surjective** si : $\forall y\in B, \exists x\in A, f(x)=y$
 - f est **bijective** si elle est **injective** et **surjective**
 
 On peut le représenter ainsi :
@@ -56,7 +57,7 @@ Par exemple :
 
 # Propriétés d'exemples de fonctions
 ## Polynômes
-Un polynôme à coefficients réels/complexes de degré $n$ s'écrit sous la forme : $P(X)=a_{n}X^{n}+a_{n-1}X^{n-1}+...a_{1}X+a_{0}$ avec $n\in \mathbb{N}$ et $a_{i}\in\mathbb{R}$ 
+Un polynôme à coefficients réels/complexes de degré $n$ s'écrit sous la forme : $P(X)=a_{n}X^{n}+a_{n-1}X^{n-1}+...a_{1}X+a_{0}$ avec $n\in \mathbb{N}$ et $a_{i}\in\mathbb{R}$
 
 L'ensemble des polynômes réels s'écrit : $\mathbb{R}[X]$ et des polynômes complexes : $\mathbb{C}[X]$
 

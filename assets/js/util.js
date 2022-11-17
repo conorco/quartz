@@ -183,8 +183,10 @@ const displayResults = (finalResults, extractHighlight = false) => {
   const results = document.getElementById("results-container")
   if (finalResults.length === 0) {
     results.innerHTML = `<button class="result-card">
-                    <h3>No results.</h3>
-                    <p>Try another search term?</p>
+                    <!-- <h3>No results.</h3>
+                    <p>Try another search term?</p> -->
+                    <h3>Pas de résultats.</h3>
+                    <p>Essayez avec un autre terme ?</p>
                 </button>`
   } else {
     results.innerHTML = finalResults

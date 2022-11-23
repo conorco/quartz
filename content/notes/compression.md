@@ -109,7 +109,7 @@ Donc développement d'autres codages de caractères
 | 0xxxxxxx                            | 1                        | 7 bits                                |
 | <mark style="background: #BBFABBA6;">110xxxxx</mark> <mark style="background: #FFB86CA6;">10xxxxxx</mark>                   | 2                        | 8 à 11 bits                           |
 | <mark style="background: #BBFABBA6;">1110xxxx</mark><mark style="background: #FFB86CA6;"> 10xxxxxx 10xxxxxx</mark>          | 3                        | 12 à 16 bits                          |
-| <mark style="background: #BBFABBA6;">11110xxx</mark><mark style="background: #FFB86CA6;"> 10xxxxxx 10xxxxxx 10xxxxxx</mark> | 4                        | 17 à                                       |
+| <mark style="background: #BBFABBA6;">11110xxx</mark><mark style="background: #FFB86CA6;"> 10xxxxxx 10xxxxxx 10xxxxxx</mark> | 4                        | 17 à 21 bits                                      |
 
 **21 bits sont suffisants pour représenter l'ensemble des caractères définis par l'Unicode**
 

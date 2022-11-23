@@ -14,6 +14,15 @@
           {{partial "recent.html" . }}
         {{end}}
     </article>
+    <div id="cusdis_thread"
+  data-host="https://cusdis.com"
+  data-app-id="3c35da46-1d7c-4a3f-b6ac-0ffbd687d557"
+  data-page-id="{{ .Title }}"
+  data-page-url="{{ .LinkTitle | title }}"
+  data-page-title="{{ .Title }}"
+></div>
+<script defer src="https://cusdis.com/js/widget/lang/fr.js"></script>
+<script async defer src="https://cusdis.com/js/cusdis.es.js"></script>
     {{partial "footerIndex.html" .}}
 </div>
 </body>

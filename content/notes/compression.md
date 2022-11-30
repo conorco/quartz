@@ -320,8 +320,99 @@ La réciproque est vraie, si une suite de $l_{k}$ vérifient cette relation, alo
 # Codages de compression statistique
 ## Introduction
 
+**Compressions avec algorithmes statistiques**
+
+- Pour les données **aléatoires** ↪ sans corrélations entre elles
+- basées sur les **fréquences d'apparition** des symboles
+- attribuer un code binaire d'autant **plus court** que le symbole apparaît **souvent** et inversement (appelé VLC[^7])
+
+[^7]: Variable Length Code
+
+**Deux algorithmes : de Shannon-Faro et Huffman**
+
+> [!check] But des codages de compression statistique
+> 
+> - Associer de manière optimale (le mieux possible) des mots aux symboles (utiliser les caractères dans les exemples)
+> - Mettre en œuvre des codes de longueur variable pour réaliser des codes de longueur moyenne minimale
+> - Réaliser des codes qui ne soient pas ambigus (code préfixe)
+
 ## Codage de Shannon-Fano
 
+> [!tldr] Méthode du codage de Shannon-Faro
+> 
+> 1. Calculer les fréquences d'apparition des symboles (=probabilité)
+> 2. Les trier par ordre décroissant dans un tableau
+> 3. Diviser ce tableau en deux partie équivalentes (obtenir la **somme de fréquence ou probabilité la plus égale entre les parties**)
+> 4. Affecter 0 à la moitié inférieure et 1 à la moitié supérieure
+> 5. Recommencer en re-divisant chaque partie du tableau de manière équivalente
+
+> [!example] Exemple avec un code à 5 lettres
+> 
+> 1 et 2 : 
+> ![tableau des fréquences des lettres](../images/Pasted%20image%2020221130113610.png)
+> 
+> Divisions en parties équivalentes : 
+> ![tableau avec attribution du code binaire](../images/Pasted%20image%2020221130113650.png)
+> 
+> Donc le code final est :
+> ![tableau avec équivalence entre lettre et codage binaire](../images/Pasted%20image%2020221130113717.png)
+
+
+Le codage de Shannon-Fano est un algorithme simple avec des performances élevées. Mais c'est un code **sous-optimal** en terme de longueur moyenne des mots code. Donc, pour assurer l'optimalité : code de **Huffman**
+
 ## Codage de Huffman
+
+Ce codage a été créé par David A. Huffman, et est par exemple utilisé pour le format `.zip`
+
+L'idée de ce code est de coder ce qui t fréquent sur peu de place et coder en revanche sur des séquences plus longues ce qui revient rarement. Ce code utilise une création d'un arbre, et l'encodage du texte se fait selon l'arbre.
+
+> [!info] Vocabulaire du code de Huffman
+> 
+> **Feuille de l'arbre = nœuds initiaux** : un caractère et sa fréquences (probabilité d'apparition)
+> 
+> **Branches** : lien entre les nœuds. Par convention :
+> 	- les branches à gauche : code 0
+> 	- les branches à droite : code 1
+>
+> **Racines de l'arbre** : dernier nœud
+
+Illustration d'un arbre du code de Huffman :
+![résultat d'un arbre pour coder 5 caractères](../images/Pasted%20image%2020221130114758.png)
+
+> [!tldr] Méthode du codage de Huffman
+> 
+> 1. Tableau des fréquences d'apparition des symboles
+> 2. Tant qu'il y a plus d'un nœud :
+> 	1. Faire 2 nœuds de plus petites probabilités reliés par des branches (0 ou 1)
+> 	2. Faire un nouveau nœud qui relie ces nœuds avec la somme des probabilités
+> 	3. Réordonner la nouvelle liste
+> 	4. Dernier nœud = racine (somme des probabilité = 1)
+> 3. Les chemins des la racines jusqu'au "feuilles" donnent le code des symboles 
+
+> [!example] Exemple avec un code à 5 caractères
+> 
+> Avec les lettres telles que : ![](../images/Pasted%20image%2020221130114909.png)
+> 
+> On effectue d'abord :
+> ![](../images/Pasted%20image%2020221130114922.png)
+> 
+> Puis :
+> ![](../images/Pasted%20image%2020221130114935.png)
+> 
+> On répète l'opération pour toutes les lettres restantes, et on obtient donc :
+> ![résultat d'un arbre pour coder 5 caractères](../images/Pasted%20image%2020221130114758.png)
+> 
+> Le codage correspondant est alors :
+> ![](../images/Pasted%20image%2020221130115057.png)
+
+> [!bug] Inconvénient du codage de Huffman
+> 
+> Il est nécessaire de pouvoir lire tout le fichier avant de le comprimer (afin de connaître les fréquences)
+
+> [!check] Notes sur le codage de Huffman
+> 
+> - pour décoder, il faut évidemment avoir le même arbre (il faut s’être mis d’accord des deux cotés au préalable : on ne « unzip » pas un fichier « .rar »)
+> - pour décomprimer il faut connaître les codes et donc la table, ajoutée devant le fichier, aussi bien pour transmettre que stocker ↪ diminue la compression surtout pour les petits fichiers.
+> - Plusieurs variantes du code de Huffman existent
 
 # Codages par substitution

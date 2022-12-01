@@ -324,7 +324,7 @@ La réciproque est vraie, si une suite de $l_{k}$ vérifient cette relation, alo
 
 - Pour les données **aléatoires** ↪ sans corrélations entre elles
 - basées sur les **fréquences d'apparition** des symboles
-- attribuer un code binaire d'autant **plus court** que le symbole apparaît **souvent** et inversement (appelé VLC[^7])
+- attribuer un code binaire d'autant **plus court** que le symbole apparaît **souvent** et inversement (appelé VLC[^7]) ↪ donc code à **longueur variable**
 
 [^7]: Variable Length Code
 
@@ -333,8 +333,8 @@ La réciproque est vraie, si une suite de $l_{k}$ vérifient cette relation, alo
 > [!check] But des codages de compression statistique
 > 
 > - Associer de manière optimale (le mieux possible) des mots aux symboles (utiliser les caractères dans les exemples)
-> - Mettre en œuvre des codes de longueur variable pour réaliser des codes de longueur moyenne minimale
-> - Réaliser des codes qui ne soient pas ambigus (code préfixe)
+> - Mettre en œuvre des codes de **longueur variable** pour réaliser des codes de **longueur moyenne minimale**
+> - Réaliser des codes qui ne soient pas ambigus (**code préfixe**)
 
 ## Codage de Shannon-Fano
 
@@ -348,7 +348,7 @@ La réciproque est vraie, si une suite de $l_{k}$ vérifient cette relation, alo
 
 > [!example] Exemple avec un code à 5 lettres
 > 
-> 1 et 2 : 
+> 1 et 2 : trier par ordre décroissant
 > ![tableau des fréquences des lettres](../images/Pasted%20image%2020221130113610.png)
 > 
 > Divisions en parties équivalentes : 
@@ -358,13 +358,13 @@ La réciproque est vraie, si une suite de $l_{k}$ vérifient cette relation, alo
 > ![tableau avec équivalence entre lettre et codage binaire](../images/Pasted%20image%2020221130113717.png)
 
 
-Le codage de Shannon-Fano est un algorithme simple avec des performances élevées. Mais c'est un code **sous-optimal** en terme de longueur moyenne des mots code. Donc, pour assurer l'optimalité : code de **Huffman**
+Le codage de Shannon-Fano est un algorithme simple avec des performances élevées. Mais c'est un code **sous-optimal** (pas optimisé dans le sens statistique) en terme de longueur moyenne des mots code. Donc, pour assurer l'optimalité : code de **Huffman**
 
 ## Codage de Huffman
 
 Ce codage a été créé par David A. Huffman, et est par exemple utilisé pour le format `.zip`
 
-L'idée de ce code est de coder ce qui t fréquent sur peu de place et coder en revanche sur des séquences plus longues ce qui revient rarement. Ce code utilise une création d'un arbre, et l'encodage du texte se fait selon l'arbre.
+L'idée de ce code est de coder ce qui est fréquent sur peu de place et coder en revanche sur des séquences plus longues ce qui revient rarement. Ce code utilise une création d'un arbre, et l'encodage du texte se fait selon l'arbre.
 
 > [!info] Vocabulaire du code de Huffman
 > 
@@ -405,14 +405,136 @@ Illustration d'un arbre du code de Huffman :
 > Le codage correspondant est alors :
 > ![](../images/Pasted%20image%2020221130115057.png)
 
-> [!bug] Inconvénient du codage de Huffman
-> 
-> Il est nécessaire de pouvoir lire tout le fichier avant de le comprimer (afin de connaître les fréquences)
 
-> [!check] Notes sur le codage de Huffman
+> [!bug] Sur les codages 
 > 
+> - Il est nécessaire de pouvoir lire tout le fichier avant de le comprimer (afin de connaître les fréquences)
 > - pour décoder, il faut évidemment avoir le même arbre (il faut s’être mis d’accord des deux cotés au préalable : on ne « unzip » pas un fichier « .rar »)
 > - pour décomprimer il faut connaître les codes et donc la table, ajoutée devant le fichier, aussi bien pour transmettre que stocker ↪ diminue la compression surtout pour les petits fichiers.
 > - Plusieurs variantes du code de Huffman existent
 
+> [!attention] Ne pas confondre les 2 codages
+> 
+> | Huffman                                    | Shannon-Fano              |
+> | ------------------------------------------ | ------------------------- |
+> | Addition des probabilités                  | Division des probabilités |
+> | Commence par les plus petites probas | Commence par les plus grandes probas                          |
+
 # Codages par substitution
+
+Précédemment on a vu les compressions avec des algorithmes statistiques.
+
+Les compressions avec des **algorithmes dynamiques** se font avec :
+
+- des données redondantes : certaines séquences de symboles se répètent plus ou moins régulièrement ↪ leur attribuer un code spécifique bien plus court  réduire la taille occupée
+- RLE et compression par dictionnaire Lempel et Ziv
+
+## Codage RLE[^8]
+[^8]: Run Length Encoding
+
+Codage basé sur la **redondance**
+
+> [!info] Principe du RLE
+> 
+> - Suite de bits ou de caractères identiques remplacée par un couple (nombre d’occurrences ; bit ou caractère répété) (*par exemple : dddddddddd ↪ 10d*)
+> - Le résultat comporte *en général* moins de caractères
+> 	- AAAAAAAAZZEEEEEER ↪ 8A2Z6E1R ↪ beaucoup plus court
+> 	-  WBWBWBWBWB ↪ 1W1B1W1B1W1B1W1B1W1B ↪ deux fois plus long
+> - Nécessité d’un caractère spécial pour annoncer une répétition (*par exemple : @10d*)
+> - C'est une compression pour plus de 3 répétitions :
+> 	- aa ↪ 2@a (3 bits > 2 bits : ✖compression)
+> 	- aaa ↪ 3@a (3 bits = 3 bits : ✖compression 
+> 	- aaaa ↪ 4@a (3 bits < 4 bits : ✔ compression)
+
+## Compression par dictionnaire Lempel et Ziv
+
+Fonctionne sur le même principe que le RLE
+
+> [!info] Principe de la compression par dictionnaire
+> 
+> - Remplacer des séquences ou termes par un code plus court appelé l’indice de ce terme dans un dictionnaire.
+> - Sauvegarder des chaînes de caractères dans un dictionnaire et les indexer
+> - Lorsqu’on trouve un mot dans la liste, remplacer ce mot par sa position dans la liste.
+> - Deux types de fonctionnement :
+> 	- Dictionnaire calculé une fois pour toute
+> 	- Dictionnaire qui évolue
+> - Nature du dictionnaire : dépend des applications (textes, binaires, codes sources...)
+
+Vient de Jacob Ziv and Abraham Lempel (1970) ↪ LZ77, LZ78 et LZW
+
+> [!tldr] 1ère méthode : LZ77
+> 
+> Le dictionnaire est une portion du texte à encoder
+> 
+> - Fenêtre glissante avec 2 parties
+> 	1. Buffer de recherche (dictionnaire)
+> 	2. Buffer de lecture
+> - Le dictionnaire contient les chaînes les plus récentes présentes dans la fenêtre glissante
+> - Evolution perpétuelle du dictionnaire
+> 
+> En sortie, on obtient un triplet **(P,L,C)** avec :
+> - P = distance entre le début du Buffer de lecture et la position de répétition
+> - L = longueur de la séquence commune
+> - C = caractère suivant dans le Buffer lecture
+
+> [!tldr] 2ème méthode : LZ78
+> 
+> Algorithme LZ77 : trop peu de mémoire (ne garde que les N derniers caractères)
+> 
+> L278 :
+> - pas de fenêtre coulissante
+> - dictionnaire constitué à partir de tout le texte au fur et à mesure
+> 
+> Au départ, aucun terme connu ↪ on ajoute au dictionnaire tous les termes rencontrés en les numérotant
+> 
+> On cherche le plus long terme en correspondance avec un terme du dictionnaire
+
+> [!tldr] 3ème méthode : LZW
+> 
+> *Proposé par Terry Welch en 1984*
+> 
+> LZ78 écrit trop de caractères ↪ pour faire mieux, à l'initialisation dictionnaire = toutes les lettres de l'alphabet (tous les caractères ASCII)
+> 
+> Pour un nouveau mot du dictionnaire : tous ses préfixes présents
+> 
+> Lecture du caractère du mot à coder ajouté au mot surveillé actuel (au départ : mot vide)
+> 
+> 2 cas :
+> 1. **Mot présent dans le dictionnaire** 
+> 	1. Recommencer en lisant la lettre suivante
+> 2. **Mot non présent dans le dictionnaire**
+> 	1. Ajouter au dictionnaire
+> 	2. Coder le mot sans la dernière lettre avec son index
+> 	3. lecture avec cette dernière lettre lue (première lettre non codée)
+> 
+> En sortie : un indice **I** qui est l'index du terme dans le dictionnaire
+
+# Conclusion
+
+Plusieurs **critères pour qualifier la compression** :
+- **taux** de compression
+- **avec ou sans perte** (= destructive ou non)
+- **temps** de compression
+
+Tout algo de compression possède un algo de décompression correspondant
+
+## Compression de données sans perte
+
+- réduit la taille des données en **supprimant les redondances**
+- processus **réversible**, valable pour **tout type de données**, gain théoriquement assez faible
+- compress d'`UNIX` et format `GIF`[^9] ↪ Algo LZW (plus efficace que l'algo RLE pour BMP)
+- `PNG` et `gzip`utilisent l'algo *Deflate* = combinaison des algo LZ77 et Huffman
+[^9]: Graphic Interchange Format
+
+## Compression avec perte 
+
+- Compression **dégradante**, **suppression des informations** "peu significatives, inutiles"
+- Compression **non réversible**, **gain** de compression **très grand**
+
+Format `JPEG`[^10] : formules mathématiques complexes ↪ enlever les détails non visibles à l'oeil (même principe pour les `mp3`)
+[^10] : Joint Photographic Expert Group
+
+Format `MPEG`[^11] : compression de la vidéo ↪ détecter des corrélations dans les données (informations redondantes)
+ - corrélations spatiales : des formes qui se répètent, des motifs
+ - corrélations temporelles ↪ éléments semblables d'une image à l'autre (détection de mouvement)
+[^11] : Moving Photographic Expert Group

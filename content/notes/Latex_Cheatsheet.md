@@ -34,7 +34,9 @@ tags:
 | conjugué (barre supérieur)             | `\overline{z}`                | $\overline{z}$                |
 | environ                                | `\approx`                     | $\approx$                     |
 | grandes parenthèses (ou autre symbole) | `\left( \frac{1}{2} \right )` | $\left( \frac{1}{2} \right )$ |
-| flèches                                | `\rightarrow` et `\leftarrow` | $\rightarrow$ et $\leftarrow$                              |
+| flèches                                | `\rightarrow` et `\leftarrow` | $\rightarrow$ et $\leftarrow$ |
+| flèche qui associe                     | `\mapsto`                     | $\mapsto$                     |
+| inclus dans / contient                 | `\subseteq` / `\supseteq`                   | $\subseteq$ / $\supseteq$                   |
 
 
 # Lettres grecques

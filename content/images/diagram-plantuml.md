@@ -1,5 +1,0 @@
-```plantuml
-!theme sketchy
-
-
-```

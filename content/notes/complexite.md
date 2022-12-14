@@ -2,7 +2,7 @@
 title: "Complexité d'un algorithme"
 tags:
 - info
-- complexite
+- complexité
 ---
 
 ## Algorithme et problème
@@ -27,7 +27,7 @@ tags:
 - pour estimer le temps de calcul d'un programme [(Worst Case Execution Time](https://www.wikiwand.com/fr/Worst_Case_Execution_Time))
 - prédire la consommation énergétique d'un programme
 
-> [info] Comment calculer la complexité en temps d'un algorithme
+> [!info] Comment calculer la complexité en temps d'un algorithme
 > 
 > N = taille de la donnée manipulée par l'algo
 > Montrer que le nombre d'opérations effectuées par l'algo est proportionnel à l'une des fonctions : $1, N^{2,}\log_{2(N),}N, N^{3},N\times \log_{2(N)},N^{k}, 2^{N}$

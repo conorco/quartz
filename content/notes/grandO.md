@@ -3,7 +3,7 @@ title: "La notation O()"
 tags:
 - maths
 - info
-- complexite
+- complexité
 ---
 
 # Définition

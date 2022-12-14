@@ -2,7 +2,7 @@
 title: "Complexité d'un algorithme"
 tags:
 - info
-- complexité
+- complexite
 ---
 
 ## Algorithme et problème

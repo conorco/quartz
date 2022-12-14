@@ -3,6 +3,7 @@ title: "Latex Cheatsheet"
 tags:
 - info
 - latex
+- maths
 - tips
 ---
 

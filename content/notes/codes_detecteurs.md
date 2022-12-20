@@ -100,11 +100,13 @@ Permet un **décodage immédiat**
 ### Réception
 
 Par exemple, pour le massage reçu suivant :
+
 ![](../images/Pasted%20image%2020221217154518.png)
 
 Il y a 1 ou 3 erreurs commises car le nombre de bits est **impair**
 
 Mais dans cet exemple :
+
 ![](../images/Pasted%20image%2020221217154600.png)
  Il peut y avoir 0, 2 ou 4 erreurs commises car le nombre de bits est **pair**
 
@@ -137,6 +139,7 @@ Mais dans cet exemple :
 ### Réception
 
 Par exemple :
+
 ![](../images/Pasted%20image%2020221217155234.png)
 
 La correction se fait par la **distance de Hamming** minimale avec les mots possibles, donc le mot décodé est `1`.
@@ -185,6 +188,13 @@ A la réception, on peut donc comparer les bits de parités pour chaque ligne et
 
 # Code de Hamming
 ## Principe
+
+> [!info] Code de Hamming
+> 
+> Le **code de Hamming** est un codage par bit de **parité**.
+> 
+> C'est un code **correcteur** d'erreur grâce à l'utilisation de **plusieurs** bits de parité. Il permet de **détecter la position d'une erreur** et est donc **auto-correcteur**
+
 
 
 ## Codage

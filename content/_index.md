@@ -6,7 +6,7 @@ enableToc: false
 # 👋 Bienvenue
 
 Ce site est un recueil de prises de notes, fiches de cours... je ne sais pas vraiment tout ce que je vais y mettre pour le moment.
-Pour l'instant, il y a du contenu à propos de [maths](tags/maths/), d'[informatique](tags/info/) et quelques petits [tips](tags/tips/).
+Pour l'instant, il y a du contenu à propos de [maths](tags/maths), d' [informatique](tags/info) et quelques petits [tips](tags/tips).
 
 ## 📑 Utilisation du site
 

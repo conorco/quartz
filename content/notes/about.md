@@ -32,4 +32,5 @@ Je suis **étudiant** en **licence d'informatique** à Rennes. Je m'occupe d'ajo
 - Ajouter du contenu à ce site
 	- des articles sur des sujets qui me plaisent
 	- des recommendations de contenus (podcasts, musiques, films...)
+- Ajouter le moyen d'avoir des commentaires sur certains contenus uniquement (avec un tag spécifique) sur ce site
 - Apprendre des choses et les partager

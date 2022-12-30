@@ -62,4 +62,4 @@ other = "Rechercher quelque-chose..."
 other = "Table des matières"
 
 [copyright]
-other = "Fait avec 💛 par {{ .name }} en utilisant <a href=\"https://github.com/jackyzha0/quartz\">Quartz</a>, © {{ .year }}"
+other = "Fait avec 💛 par <a href=\"https://me.konor.fr\" target=\"blank_\">{{ .name }}</a> en utilisant <a href=\"https://github.com/jackyzha0/quartz\" target=\"blank_\">Quartz</a>, © {{ .year }}"

@@ -194,10 +194,162 @@ A la réception, on peut donc comparer les bits de parités pour chaque ligne et
 > Le **code de Hamming** est un codage par bit de **parité**.
 > 
 > C'est un code **correcteur** d'erreur grâce à l'utilisation de **plusieurs** bits de parité. Il permet de **détecter la position d'une erreur** et est donc **auto-correcteur**
+> 
+> ⇒ pour un mot de **k bits** → ajout de **r bits de contrôle**, donc la longueur totale du message est $2^{r}-1$ (car le bit de parité se trouve sur les positions des puissances de 2)
 
 
+![](../images/Pasted%20image%2020221229140825.png)
 
 ## Codage
 
+Les bits de contrôle se trouvent sur les positions des **puissances de 2**. Par exemple, avec un mot à transmettre tel que :
+
+![](../images/Pasted%20image%2020221229141001.png)
+
+Le mot codé sera :
+
+![](../images/Pasted%20image%2020221229141027.png)
+
+> [!tip] Utilisation des bits de contrôle
+> 
+> Dans cet exemple :
+> - <mark style="background: #ADCCFFA6;">$p_0$</mark> vérifie tous les bits avec bit de position <mark style="background: #ADCCFFA6;">$b_{0}=1$</mark>
+> - <mark style="background: #BBFABBA6;">$p_1$</mark> vérifie tous les bits avec bit de position <mark style="background: #BBFABBA6;">$b_{1}=1$</mark>
+> - <mark style="background: #FF5582A6;">$p_2$</mark> vérifie tous les bits avec bit de position <mark style="background: #FF5582A6;">$b_{2}=1$</mark>
+> 
+> On a donc :
+> 
+> | Bit de parité | Rangs des bits vérifiés |
+> | ------------- | ----------------------- |
+> |<mark style="background: #ADCCFFA6;"> $p_{0}$</mark>       | 1,3,5,7                 |
+> | <mark style="background: #BBFABBA6;">$p_{1}$</mark>       | 2,3,6,7                 |
+> | <mark style="background: #FF5582A6;">$p_{2}$ </mark>      | 4,5,6,7                 | 
 
 ## Décodage
+
+Pour décoder, il suffit de re-calculer les bits de parité $p_{0}'$, $p_{1}'$ et $p_{2}'$. On les compare avec  $p_{0}$, $p_{1}$ et $p_{2}$ et on attribue à  $C_{0}$, $C_{1}$ et $C_{2}$ les valeurs :
+- si égaux → 0
+- sinon → 1
+
+La lecture de $C_{2}C_{1}C_{0}$ permet de connaître la **position de l'erreur**
+
+| $C_{2}C_{1}C_{0}$ | Erreur        |
+| ----------------- | ------------- |
+| 000               | Aucune erreur |
+| 001               | Position 1    |
+| 010               | Position 2    |
+| 011               | Position 3    |
+| 100               | Position 4    |
+| 101               | Position 5    |
+| 110               | Position 6    |
+| 111               | Position 7    |
+
+avec les positions telles que : 
+
+![](../images/Pasted%20image%2020221229141027.png)
+
+> [!tip] Remarque sur la position des erreurs
+> 
+> On remarque que la valeur de $C_{2}C_{1}C_{0}$ donne la valeur en **binaire** de la position où se trouve l'erreur
+
+> [!check] Performances du code de Hamming
+> 
+> - Longueur des mots d'information : $k$
+> - Redondance : $r$
+> - Longueur des messages émis : $n=2^{r}-1$
+> - **Rendement :** $R = \frac{2^{r}-1-r}{2^{r}-1}$ (rendement assez fort)
+>   
+>  Code qui permet de **détecter** et de **corriger** une erreur
+
+# Code cyclique de redondance (CRC)
+## Principe
+
+Les codes **cycliques** sont des codes utilisés dans certains cas qui ne **corrigent pas les erreurs** mais les détectent **rapidement et efficacement**
+
+Les **CRC**[^1] sont utilisés dans les **réseaux informatiques** afin de détecter les **erreurs groupées**
+
+[^1]: Cyclic Redundancy Check
+
+## Codage
+
+Schéma général du principe du  CRC :
+
+![schéma du principe du CRC](../images/Pasted%20image%2020221230223041.png)
+
+### 1. Représentation du mot par un polynôme
+
+Le mot binaire de **k bits** est représenté par un polynôme de degré **k-1**
+Par exemple :
+- mot = $[b_{k-1}b_{k-2}...b_{0}]$
+- polynôme associé : $P(x)=b_{k-1}\times x^{k-1}+b_{k-2}\times x^{k-2}...b_{0}\times x^{0}$
+
+Afin de coder le mot (donc en ajoutant des bits de contrôles), on effectue :
+- des opérations sur les polynômes
+- en utilisant un polynôme générateur
+
+### 2. Utilisation du polynôme générateur
+
+Le polynôme générateur $G(x)$ est de degré $r$ et est connu par **l'émetteur et le récepteur**
+
+Calcul de $P(x)\times x^{r} \Leftrightarrow$ <mark style="background: #FF5582A6;">ajouter $r$ fois $0$ au mot binaire</mark>
+
+> [!example] Exemple avec $k=5$
+> 
+> Le polynôme est de degré $k-1$ donc de degré 4
+> 
+> Soit le mot binaire : [1 0 1 1 1] → $P(x)=x^{4}+x^{2}+x+1$
+> 
+> Soit $G(x)=x^{2}+1$ → degré $r=2$
+> 
+> Donc, $P(x)\times x^{2}=x^{6}+x^{4}+x^{3}+x^{2}$ → 10111<mark style="background: #FF5582A6;">00</mark>
+
+### 3. Calcul de $\frac{P(x)\times x^{r}}{G(x)}$ (pas de signe < 0)
+
+> [!example] Exemple avec $k=5$
+> 
+> On calcule donc $\frac{x^{6}+x^{4}+x^{3}+x^{2}}{x^{2}+1}$
+> 
+> ![](../images/Pasted%20image%2020221230230516.png)
+> 
+> Mais **sans aucun signe négatif**, donc on a :
+> 
+> ![](../images/Pasted%20image%2020221230231004.png)
+> 
+
+### 4. Utilisation du reste pour construire $T(x)$
+
+Le reste de la division de $\frac{P(x)\times x^{r}}{G(x)}$ est représenté par un mot binaire de $r$ bits et ajouté **à la fin du mot à transmettre** ce qui correspond au polynôme cyclique $T(x)$
+
+> [!example] Exemple avec $k=5$
+> 
+> D'après l'étape précédente, le reste est $x+1$ → $\textcolor{red}{11}$
+> 
+> Comme le mot initial est $10111$, on y ajoute $\textcolor{red}{11}$, donc le mot à transmettre est $t = 10111\textcolor{red}{11}$
+
+## Décodage
+
+1. Réception du message $t'$ → représenté par un polynôme $T(x)$
+2. Opération $\frac{T(x)}{G(x)}$ où $G(x)$ est le polynôme générateur utilisé à l'émission
+3. Reste de la division :
+	- 0 ⇒ pas d'erreur
+	- $\neq$ 0 ⇒ erreur(s) ⇒ retransmettre le message
+
+> [!example] Exemple de décodage
+> 
+> - Mot reçu : $t'=1011111$ donc $T(x)=x^{6}+0+x^{4}+x^{3}+x^{2}+x+1$
+> - $G(x)=x^{2}+1$ → degré $r=2$
+>   
+>   On effectue l'opération $\frac{T(x)}{G(x)}=\frac{x^{6}+0+x^{4}+x^{3}+x^{2}+x+1}{x^{2}+1}$
+>   
+>   ![](../images/Pasted%20image%2020221230233546.png)
+>   
+>   Le reste de la division est **0** donc **pas d'erreur**
+
+# Conclusion
+
+| Code détecteur d'erreur | Code correcteur d'erreurs (et détecteur) |
+| ----------------------- | ---------------------------------------- |
+| Code de parité          | Code de répétition                       |
+| Code CRC                | Code de double parité                    |
+|                         | Code de Hamming                          |
+

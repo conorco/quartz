@@ -7,6 +7,10 @@ tags:
 - tips
 ---
 
+> [!hint] Information
+> 
+> La plupart des symboles LaTeX peuvent être trouvés sur le site [Detexify](https://detexify.kirelabs.org/classify.html), mais cette cheatsheet présente ceux que j'utilise le plus souvent
+
 # Texte
 
 | Action                    | Commande Latex            |
@@ -14,7 +18,7 @@ tags:
 | mettre en gras            | `\bf{}`                   |
 | mettre en italique        | `\emph{}`                 |
 | souligner                 | `\underline{}`            |
-| mettre en couleur (exemple : rouge) | `\textcolor{red}{texte}}` |
+| mettre en couleur (exemple : rouge) | `\textcolor{red}{texte}` |
 
 # Mathématiques
 

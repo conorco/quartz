@@ -90,7 +90,7 @@ tbody, li, p {
 
 #TableOfContents > ol {
   counter-reset: section;
-  margin-left: 0em;
+  margin-left: 0;
   padding-left: 1.5em;
   & > li {
     counter-increment: section;
@@ -143,7 +143,7 @@ sup {
 }
 
 blockquote {
-  margin-left: 0em;
+  margin-left: 0;
   border-left: 3px solid var(--secondary);
   padding-left: 1em;
   transition: border-color 0.2s ease;
@@ -300,13 +300,11 @@ footer {
 }
 
 hr {
-  width: 25%;
-  margin: 4em auto;
-  height: 2px;
-  border-radius: 1px;
-  border-width: 0;
-  color: var(--dark);
-  background-color: var(--dark);
+  width: 100%;
+  margin: 2em auto;
+  height: 1px;
+  border: none;
+  background-color: var(--outlinegray);
 }
 
 .page-end {
@@ -534,7 +532,7 @@ header {
   & h3 {
     opacity: 1;
     font-weight: 700;
-    margin: 0em;
+    margin: 0;
   }
 
   & .meta {
@@ -572,7 +570,7 @@ header {
   transition: opacity 0.2s ease, transform 0.2s ease;
   user-select: none;
   overflow-wrap: anywhere;
-  box-shadow: 6px 6px 36px 0px rgba(0,0,0,0.25);
+  box-shadow: 6px 6px 36px 0 rgba(0,0,0,0.25);
 
   @media all and (max-width: 600px) {
     display: none !important;
@@ -619,4 +617,9 @@ header {
   li a {
     padding: 0 1em;
   }
+}
+
+mark {
+  background-color: var(--highlighted);
+  color: var(--gray);
 }

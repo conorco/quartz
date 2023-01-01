@@ -12,8 +12,11 @@ enableContextualBacklinks: true
 enableRecentNotes: true
 enableGitHubEdit: false
 GitHubLink: https://github.com/hzkonor/quartz
-enableSemanticSearch: false
-operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
+enableMermaid: true
+search:
+  enableSemanticSearch: false
+  operandApiKey: "REPLACE-WITH-YOUR-OPERAND-API-KEY"
+  operandIndexId: "REPLACE-WITH-YOUR-OPERAND-INDEX-ID"
 description:
   "Vrakonor - mes notes en vrak"
 page_title:

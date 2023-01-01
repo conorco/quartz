@@ -1,5 +1,6 @@
 ---
 title: "A propos de moi"
+enableToc: false
 tags:
 - tips
 ---

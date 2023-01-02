@@ -9,12 +9,12 @@ tags:
 
 Il y a des **altérations du message** dues au canal de transmission (câble, transmission sans fil...). Par exemple, pour un taux d'erreur de $10^{6}$ = 1 bit erroné sur $10^{6}$, donc pour une connexion à 1 Mo/s ↪ 8 bits erronés /seconde 
 
-⇒ Altération des données stockées (DVD, disque-dur, mémoire flash)
+⇒ Altération des données stockées due à la durée de vie du matériel (DVD, disque-dur, mémoire flash)
 
 Le **taux d'erreur** varie énormément → compris entre $10^{-9}$ et $10^{-4}$
 
 Le **principe général** de détection et de correction des erreurs est donc :
-- d'ajouter de la redondance au message à transmettre → différentes manières de le faire
+- **d'ajouter de la redondance** au message à transmettre → différentes manières de le faire
 - et à la réception d'effectuer l'opération inverse → les bits ajoutés sont contrôlés pour éviter les erreurs
 
 > [!example] Transmettre un numéro de téléphone avec une erreur
@@ -45,10 +45,10 @@ Donc : une information **concise** est **difficile à corriger** alors que dans 
 
 **code C(n,k)** :
 - Nombre de bits du **message** : k bits
-- Nombre de bits du **contrôle** : r bits
+- Nombre de bits du **contrôle** : r bits (= redondance)
 - Nombre de bits **transmis** : n = k+r bits
 
-**Rendement d'un code C(n,k)** : $R=\frac{k}{N}<1$
+**Rendement d'un code C(n,k)** : $R=\frac{k}{N}=\frac{k}{k+r}<1$
 
 > [!tip] Choix d'un code
 > 
@@ -66,7 +66,7 @@ Dans la pratique des codes correcteurs → codages par blocs
 
 ### Codage systématique
 
-Le mot à coder se trouve au début du mot codé
+**Le mot à coder se trouve au début du mot codé**
 
 Il est nécessaire de rajouter $r = n-k$  bits de contrôle à la fin du mot à coder
 
@@ -99,7 +99,7 @@ Permet un **décodage immédiat**
 
 ### Réception
 
-Par exemple, pour le massage reçu suivant :
+Par exemple, pour le message reçu suivant :
 
 ![](../images/Pasted%20image%2020221217154518.png)
 
@@ -109,7 +109,6 @@ Mais dans cet exemple :
 
 ![](../images/Pasted%20image%2020221217154600.png)
  Il peut y avoir 0, 2 ou 4 erreurs commises car le nombre de bits est **pair**
-
 
 > [!check] Performances du code de parité
 > 
@@ -132,7 +131,7 @@ Mais dans cet exemple :
 >   
 > Ajout de **r bits** de contrôles → pour obtenir un nombre de bits impair
 > 
-> Noté tel que C(n,1) avec n = k+r
+> Noté tel que C(n,1) avec n = k+r (et n impair)
 
 ![schéma du codage par répétition](../images/Pasted%20image%2020221217155059.png)
 
@@ -142,17 +141,15 @@ Par exemple :
 
 ![](../images/Pasted%20image%2020221217155234.png)
 
-La correction se fait par la **distance de Hamming** minimale avec les mots possibles, donc le mot décodé est `1`.
+La correction se fait par la **distance de Hamming** minimale avec les mots possibles (il n'y a que 2 mots possibles), donc le mot décodé est `1`.
 
 Dans cet exemple, si il y a 2 ou 3 erreurs ⇒ mauvaise correction
 
-
 > [!check] Performances
 > 
-> Détection des erreurs (*sauf si tous les bits sont **faux***), et correction de $\frac{r}{2}$ bits
+> Détection des erreurs (*sauf si tous les bits sont **faux***), et correction de $\frac{r}{2}$ bits erronés au maximum
 > 
-> Rendement de $R=\frac{k}{k+r}$
-
+> Rendement de $R=\frac{1}{1+r}$ donc rendement assez **élevé**
 
 ## Code double parité
 ### Emission
@@ -180,9 +177,9 @@ A la réception, on peut donc comparer les bits de parités pour chaque ligne et
 > 
 > Détection de **beaucoup d'erreur**, mais correction **d'une seule erreur**
 > 
-> - Redondance : 1+k+M
+> - Redondance : 1+k+M (k correspond aux bits de VRC et M aux bits de LRC + le bit au croisement des 2)
 > - Longueur des blocs émis : $n= (M+1)\times (k+1)$
-> - Rendement $R=\frac{Mk}{k+Mk+M+1}$
+> - Rendement $R=\frac{}{}=\frac{Mk}{k+Mk+M+1}$
 >   
 >  Donc **meilleur rendement** que le [Code de répétition](#Code%20de%20répétition)
 
@@ -199,6 +196,8 @@ A la réception, on peut donc comparer les bits de parités pour chaque ligne et
 
 
 ![](../images/Pasted%20image%2020221229140825.png)
+
+On observe que le rendement augmente avec le nombre de bits de contrôle (de $\frac{1}{3}$ à $\frac{11}{15}$ par exemple pour 2 et 4), donc on a intérêt à augmenter le nombre de bits de contrôle.
 
 ## Codage
 
@@ -283,9 +282,7 @@ Par exemple :
 - mot = $[b_{k-1}b_{k-2}...b_{0}]$
 - polynôme associé : $P(x)=b_{k-1}\times x^{k-1}+b_{k-2}\times x^{k-2}...b_{0}\times x^{0}$
 
-Afin de coder le mot (donc en ajoutant des bits de contrôles), on effectue :
-- des opérations sur les polynômes
-- en utilisant un polynôme générateur
+Afin de coder le mot (donc en ajoutant des bits de contrôles), on effectue **des opérations sur les polynômes** en utilisant un **polynôme générateur**
 
 ### 2. Utilisation du polynôme générateur
 
@@ -315,6 +312,12 @@ Calcul de $P(x)\times x^{r} \Leftrightarrow$ <mark style="background: #FF5582A6;
 > 
 > ![](../images/Pasted%20image%2020221230231004.png)
 > 
+
+> [!tip] Autre méthode
+> 
+> On peut aussi effectuer directement la division en utilisant les polynômes sous forme binaire et en divisant avec un ou exclusif $\oplus$ :
+> 
+> ![[Pasted image 20230102152008.png]]
 
 ### 4. Utilisation du reste pour construire $T(x)$
 

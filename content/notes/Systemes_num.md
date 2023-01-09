@@ -13,7 +13,7 @@ On va voir ici comment les nombres sont codés dans un ordinateur : le **format*
 - Traiter les nombres négatifs (nombres signés) --> entiers **signés** (int) (les entiers non signés sont **uint**)
 - Traiter les nombres réels (**float** ou **double**)
 
-<mark style="background: #FFF3A3A6;">Le **format** donne le type des nombres</mark>
+==Le **format** donne le type des nombres==
 
 # Représentation DCB - Décimal Codé Binaire
 ## Définition
@@ -44,6 +44,7 @@ Chaque **chiffre** décimal (de 0 à 9) est codé sur 4 bits (voir [pour le pass
 >[!example] Passer du décimal en DCB
 >
 > <mark style="background: #FFF3A3A6;">5</mark><mark style="background: #FF5582A6;">1</mark><mark style="background: #BBFABBA6;">8</mark> en DCB : <mark style="background: #FFF3A3A6;">0101</mark> <mark style="background: #FF5582A6;">0000</mark> <mark style="background: #BBFABBA6;">1000</mark>
+> 
 > <mark style="background: #FFF3A3A6;">1</mark><mark style="background: #FF5582A6;">3</mark><mark style="background: #BBFABBA6;">9</mark> en DCB : <mark style="background: #FFF3A3A6;">0001</mark> <mark style="background: #FF5582A6;">0011</mark> <mark style="background: #BBFABBA6;">1001</mark>
 
 **Toujours un multiple de 4 bits en DCB**
@@ -97,11 +98,11 @@ On ne se trouve pas sur un état interdit
 Nombres entiers signés = nombres positifs et négatifs
 ## Compléments à 2
 ### Définition
+==**Format** pour représenter les nombres entiers==
 
-**Format** pour représenter les nombres entiers
 Ce format (cpt2) est à **nombre de bits fixé** (16, 32 ou 64 bits)
 
-Méthodes différentes pour passer de la base 10 au cpt2 pour les nombres **positifs** et **négatifs**
+Méthodes différentes pour passer de la base 10 au cpt2 pour les nombres **positifs** et **négatifs** :
 
 - **Nombres positifs** : pareil que le binaire pour passer de base 10 à 2 (cf [page sur la représentation des nombres dans différentes bases](Representation_num.md)
 - **Nombres négatifs** : utilisation du complément à 2
@@ -236,7 +237,7 @@ Par exemple sur 3 bits, on va de $-2^{2} \text{ à }  2^2-1$ donc de $-4  \text{
 >
 > *Par exemple : (<mark style="background: #BBFABBA6;">4 bits</mark>, <mark style="background: #FF5582A6;">8 bits</mark>, <mark style="background: #ADCCFFA6;">16 bits</mark>)*
 >
-> 3<sub>10</sub> = <mark style="background: #BBFABBA6;">0111<sub>cpt2</sub></mark> = <mark style="background: #FF5582A6;">**0000** 0011<sub>cpt2</sub></mark> =<mark style="background: #ADCCFFA6;"> **0000 0000 0000** 0011<sub>cpt2</sub></mark>
+> 3<sub>10</sub> = <mark style="background: #BBFABBA6;">0011<sub>cpt2</sub></mark> = <mark style="background: #FF5582A6;">**0000** 0011<sub>cpt2</sub></mark> =<mark style="background: #ADCCFFA6;"> **0000 0000 0000** 0011<sub>cpt2</sub></mark>
 >
 >  -3<sub>10</sub> = <mark style="background: #BBFABBA6;">1101<sub>cpt2</sub></mark> = <mark style="background: #FF5582A6;">**1111** 1101<sub>cpt2</sub></mark> =<mark style="background: #ADCCFFA6;"> **1111 1111 1111** 1101<sub>cpt2</sub></mark>
 >  
@@ -324,7 +325,7 @@ Représentation en virgule fixe (nb de chiffres constants après la virgule) : p
 >   
 >   Stockage énorme en nombre de bits nécessaires
 
-On utilise donc la **représentation en virgule floattante**
+On utilise donc la **représentation en virgule flottante**
 
 > [!info] Réprésentation en virgule flottante
 >
@@ -375,7 +376,7 @@ La représentation par le standard IEEE754 s'écrit tel que : **SEM**<sub>(2)</s
 > [!info] Calculer E = exposant
 >
 > - E = e+d = exposant biaisé/décale qui est codé sur k bits
-> - $e_{min}=-2^{k-1+2}$ et $e_{max}=2^{k-1}-1$
+> - $e_{min}=-2^{k-1}+2$ et $e_{max}=2^{k-1}-1$
 > - Donc, pour connaître E, on doit connaître **d** = biais/décalage (dépend du format) = $2^{k-1}-1$ (k est connu = nombre de bits)
 > - D'où : <mark style="background: #FFF3A3A6;">$E_{min}=1$ et $E_{max}=2^{k}-2$ </mark>(les valeurs de 0 ($E_{min}-1$) et de $2^{k}-1$ ($E_{max}+1$) sont des **cas particuliers**)
 
@@ -460,13 +461,13 @@ Donc :
 > - Pour la mantisse : m = 1,110011 donc M = 10011(0) où (0) représente 18 0 pour arriver à 23 bits au total
 > - Le nombre est donc : 0 10000011 10011(0)
 >   
->   **2ème méthode** :
->   - Passage de 25,5 en binaire : 11001,1
->   - Sous la forme "1,..." : $(-1)^{0}\times 1,10011 \times 2^{4}$ (décalage de 4 rangs de la virgule)
->   - Donc e = 4 donc E = 131 =  $10000011_{(2)}$
->   - M = 10011(0)
+> **2ème méthode** :
+> - Passage de 25,5 en binaire : 11001,1
+> - Sous la forme "1,..." : $(-1)^{0}\times 1,10011 \times 2^{4}$ (décalage de 4 rangs de la virgule)
+> - Donc e = 4 donc E = 131 =  $10000011_{(2)}$
+> - M = 10011(0)
 >  
->  **3ème méthode** :
+> **3ème méthode** :
 >  - Division du nombre décimal par la puissance de 2 la plus proche ($2^{4}$) donc : $\frac{25,5}{16} = 1,59375$
 >  - Ecriture sous le bon format : $(-1)^{0}\times 1,59375 \times 2^{4}$
 >  - On a bien e=4 donc E = 131
@@ -522,16 +523,16 @@ Donc :
 > Calculer 3 + 15
 >
 > 1. Convertir les nombres en format IEEE754 sur 32 bits
-> 	- $3_{10}$ =  0 10000000 100$(0)_{2}$ (avec (0) = 20 zéros) = 4040 $0000_{16}$
-> 	- $15_{10}$ =  0 10000010 111$(0)_{2}$ (avec (0) = 20 zéros) = 4170 $0000_{16}$
+>    - 3<sub>10</sub> =  0 10000000 100(0)<sub>2</sub> (avec (0) = 20 zéros) = 4040 $0000_{16}$
+>    - 15<sub>10</sub> =  0 10000010 111(0)<sub>2</sub> (avec (0) = 20 zéros) = 4170 $0000_{16}$
 >
 > 2. Ici l'exposant le plus grand est $E_{2}$ = 1000 0010
-> 	- $E_{1} = 1000 0000$ donc on doit ajouter <mark style="background: #FFF3A3A6;">+2</mark> à $E_{1}$ pour avoir le même exposant
-> 	 - Donc décalage à gauche de <mark style="background: #FFF3A3A6;">2 rangs</mark> de la mantisse ↪ $m_{2}=0,011$ (**ne pas oublier le bit caché**)
+>    -  $E_{1} = 1000 0000$ donc on doit ajouter <mark style="background: #FFF3A3A6;">+2</mark> à $E_{1}$ pour avoir le même exposant
+>    - Donc décalage à gauche de <mark style="background: #FFF3A3A6;">2 rangs</mark> de la mantisse ↪ $m_{2}=0,011$ (**ne pas oublier le bit caché**)
 > 3.  Calcul sur les mantisses = 10,0100000 :
 >    ![calcul posé de l'addition des 2 mantisses|200](../images/Pasted%20image%2020221108122639.png)
 > 4. Remettre sous forme de flottant pour avoir "1,..." : on décale d'un rang vers la droite ce qui ajoute **+1** à l'exposant : $10,0100000\times 2^{E_{2}} \Rightarrow 1,00100000 \times 2^{E_{2}+1}$
-> 5. Finalement, on a : <mark style="background: #BBFABBA6;">0</mark> <mark style="background: #ADCCFFA6;">10000011</mark> <mark style="background: #FF5582A6;">001$(0)_{2}$</mark> = 4190 $0000_{16}$ avec <mark style="background: #BBFABBA6;">le signe</mark>, <mark style="background: #ADCCFFA6;">l'exposant</mark> et la <mark style="background: #FF5582A6;">mantisse</mark>
+> 5. Finalement, on a : <mark style="background: #BBFABBA6;">0</mark> <mark style="background: #ADCCFFA6;">10000011</mark> <mark style="background: #FF5582A6;">001(0)<sub>2</sub></mark> = 4190 0000<sub>16</sub> avec <mark style="background: #BBFABBA6;">le signe</mark>, <mark style="background: #ADCCFFA6;">l'exposant</mark> et la <mark style="background: #FF5582A6;">mantisse</mark>
 
 > [!tip] Opérations avec le même signe
 >

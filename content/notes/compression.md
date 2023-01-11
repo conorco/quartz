@@ -426,7 +426,7 @@ Précédemment on a vu les compressions avec des algorithmes statistiques.
 
 Les compressions avec des **algorithmes dynamiques** se font avec :
 
-- des données redondantes : certaines séquences de symboles se répètent plus ou moins régulièrement ↪ leur attribuer un code spécifique bien plus court  réduire la taille occupée
+- des données redondantes : certaines séquences de symboles se répètent plus ou moins régulièrement ↪ leur attribuer un code spécifique bien plus court ⇒ réduire la taille occupée
 - RLE et compression par dictionnaire Lempel et Ziv
 
 ## Codage RLE[^8]

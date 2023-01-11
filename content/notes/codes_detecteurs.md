@@ -83,6 +83,12 @@ Permet un **décodage immédiat**
 
 **Distance de Hamming :** nombre de positions où les bits sont différents entre 2 mots
 
+> [! check] Détection et correction d'erreurs avec la distance de Hamming
+> 
+> En connaissant la distance de Hamming minimale d’un code $d_{Hmin}$, il est alors possible de :
+> - Détecter  $d_{Hmin}$ erreurs au maximum
+> - Corriger $[\frac{d_{Hmin}-1}{2}]$ erreurs au maximum (avec $[x]$ = partie entière de $x$) 
+
 # Codes simples et usuels
 ## Code de parité
 ### Emission

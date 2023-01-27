@@ -4,6 +4,7 @@ tags:
 - maths
 - algèbre
 ---
+
 # Introduction aux systèmes linéaires
 
 ![](images/Pasted%20image%2020230127075447.png)
@@ -195,5 +196,51 @@ $$
 > [!info] Produit d'une matrice par un scalaire
 > Soit $A$ une matrice de taille $n\times m$ et $k\in \mathbb{R}$. La matrice $k\cdot A$ est une matrice dont le coefficient de la $i_{ème}$ ligne et de la $j_{ème}$ colonne est égal à $k\cdot a_{ij}$.
 
+> [!info] Produit d'une matrice par un vecteur
+> Soit $A$ une matrice de taille $n\times m$ dont les vecteurs colonnes sont les $m$ vecteurs de $\mathbb{R}^{n}$ notés $\overrightarrow{V_{1}},\overrightarrow{V_{2}},...,\overrightarrow{V_{m}}$, et soit $\overrightarrow{x}\in\mathbb{R}^{n}$ dont les composantes sont notées $x_{1},x_{2},...,x_{m}$. Alors le produit $A\cdot \overrightarrow{x}$ est noté :
+> $$
+> \begin{bmatrix}
+> \overrightarrow{V_{1}}&\overrightarrow{V_{2}}&...&\overrightarrow{V_{m}}
+> \end{bmatrix} \cdot 
+> \begin{bmatrix}
+> x_{1}  \\ x_{2} \\ . \\ . \\ x_{m}
+> \end{bmatrix} =x_{1}\overrightarrow{V_{1}}+=x_{2}\overrightarrow{V_{2}}+...+=x_{m}\overrightarrow{V_{m}}
+> $$
+
+Le produit d'une matrice par un vecteur donne une **combinaison linéaire** : expression construite à partir d'un ensemble de termes en multipliant chaque terme par une constante et en ajoutant le résultat. Par exemple, une combinaison linéaire de _x_ et _y_ serait une expression de la forme _ax + by_, où _a_ et _b_ sont des constantes.
+
 > [!important] Propriétés sur les opérations de matrices
 > - Associativité : $(A+B)+C=A+(B+C)$ et $(\alpha\beta)A=\alpha(\beta A)$
+
+# Relation entre vecteurs et systèmes
+
+$$
+\begin{cases} 3x_{1}+x_{2}=7 \\
+x_{1}+2x_{2}=4
+\end{cases} \rightarrow 
+\begin{bmatrix} 3x_{1}+x_{2} \\ x_{1}+2x_{2}
+\end{bmatrix} =
+\begin{bmatrix} 7 \\ 4
+\end{bmatrix}
+$$
+
+D'où l'écriture suivante, sous forme de produits de matrices et de vecteurs :
+$$
+\begin{bmatrix} 3x_{1} \\ x_{1}
+\end{bmatrix} +
+\begin{bmatrix} x_{2} \\ 2x_{2}
+\end{bmatrix} =
+\begin{bmatrix} 7 \\ 4
+\end{bmatrix} \rightarrow
+x_{1}\begin{bmatrix} 3 \\ \textcolor{red}{1}
+\end{bmatrix} +
+x_{2}\begin{bmatrix} \textcolor{blue}{1} \\ 2
+\end{bmatrix} =
+\begin{bmatrix} 7 \\ 4
+\end{bmatrix} \rightarrow
+\begin{bmatrix} 3&\textcolor{blue}{1} \\ \textcolor{red}{1}&2
+\end{bmatrix}
+\begin{bmatrix} x_{1} \\ x_{2}
+\end{bmatrix} = \begin{bmatrix} 7 \\ 4 \end{bmatrix}
+$$
+Donc, à partir d'un système linéaire, on peut aboutir à une équation d'un produit de matrices.

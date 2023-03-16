@@ -19,6 +19,10 @@ tags:
 | mettre en italique        | `\emph{}`                 |
 | souligner                 | `\underline{}`            |
 | mettre en couleur (exemple : rouge) | `\textcolor{red}{texte}` |
+| petit espace | `\,` |
+| espace moyen | `\:` |
+| gros espace | `\;` |
+| espace négatif qui rapproche | `\!` |
 
 # Mathématiques
 

@@ -64,6 +64,8 @@
 <!-- Fontawesome script -->
 
   <script src="https://kit.fontawesome.com/7496436bb4.js" crossorigin="anonymous"></script>
+<!-- Analytics -->
+  <script async src="https://analytics.umami.is/script.js" data-website-id="2e1b5653-8f13-4e6c-ad55-21bb9bbe4a88"></script>
 
   {{ if $data.enableCodeBlockTitle | default $.Site.Data.config.enableCallouts }}
   {{ $codeTitle := resources.Get "js/code-title.js" | resources.Fingerprint "md5" | resources.Minify }}
@@ -211,4 +213,3 @@
   </script>
   {{end}}
 </head>
-{{ template "_internal/google_analytics.html" . }}

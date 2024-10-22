@@ -1,4 +1,4 @@
-import { QuartzComponentConstructor, QuartzComponentProps } from "./types"
+import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } from "./types"
 import style from "./styles/search.scss"
 // @ts-ignore
 import script from "./scripts/search.inline"
@@ -14,12 +14,12 @@ const defaultOptions: SearchOptions = {
 }
 
 export default ((userOpts?: Partial<SearchOptions>) => {
-  function Search({ displayClass, cfg }: QuartzComponentProps) {
+  const Search: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
     const opts = { ...defaultOptions, ...userOpts }
     const searchPlaceholder = i18n(cfg.locale).components.search.searchBarPlaceholder
     return (
       <div class={classNames(displayClass, "search")}>
-        <div id="search-icon">
+        <button class="search-button" id="search-button">
           <p>{i18n(cfg.locale).components.search.title}</p>
           <div></div>
           <svg
@@ -36,7 +36,7 @@ export default ((userOpts?: Partial<SearchOptions>) => {
               <circle cx="8" cy="8" r="7" />
             </g>
           </svg>
-        </div>
+        </button>
         <div id="search-container">
           <div id="search-space">
             <input
